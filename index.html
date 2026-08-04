@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lonestar Pro Solutions — Construction & Heavy Haul | Corpus Christi & Kingsville, TX</title>
+<meta name="description" content="Residential & commercial construction with a 100% workmanship guarantee. Remodeling, roofing, drywall, fencing, custom sheds and oilfield hot shot hauling. Serving Corpus Christi, Kingsville & surrounding areas. Call (361) 742-1170.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0c121c;
+    --navy-900:#111a29;
+    --navy-800:#182335;
+    --navy-700:#223047;
+    --line:rgba(255,255,255,.09);
+    --amber:#e8912b;
+    --amber-hot:#f5a63e;
+    --amber-deep:#c9741a;
+    --sand:#f3eee4;
+    --sand-deep:#e7dfcd;
+    --ink:#1b2331;
+    --ink-soft:#4c5666;
+    --white-soft:#c9d2e0;
+    --radius:14px;
+    --display:'Big Shoulders Display',sans-serif;
+    --body:'Archivo',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--navy-950);color:var(--white-soft);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:60;background:rgba(12,18,28,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:14px;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand img{width:52px;height:52px;object-fit:contain;background:#10171f;border-radius:10px;box-shadow:0 0 0 1px var(--line)}
+  .brand-name{font-family:var(--display);font-weight:800;font-size:1.45rem;letter-spacing:.045em;color:#fff;line-height:1;white-space:nowrap}
+  .brand-name small{display:block;font-family:var(--body);font-weight:600;font-size:.62rem;letter-spacing:.34em;color:var(--amber);margin-top:4px}
+  nav{margin-left:auto;display:flex;gap:26px;font-weight:600;font-size:.86rem;letter-spacing:.04em}
+  nav a{color:var(--white-soft);transition:color .2s}
+  nav a:hover{color:var(--amber-hot)}
+  .call-pill{margin-left:26px;display:inline-flex;align-items:center;gap:9px;background:var(--amber);color:#161006;font-weight:700;font-size:.9rem;padding:11px 20px;border-radius:999px;transition:background .2s,transform .2s}
+  .call-pill:hover{background:var(--amber-hot);transform:translateY(-1px)}
+  .call-pill svg{width:16px;height:16px}
+  @media(max-width:960px){nav{display:none}}
+  @media(max-width:560px){.brand-name{font-size:1.2rem}.call-pill span{display:none}.call-pill{padding:11px 13px;margin-left:auto}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:url("assets/hero-framing.jpg") center 30%/cover no-repeat}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,18,28,.82) 0%,rgba(12,18,28,.66) 45%,rgba(12,18,28,.9) 100%)}
+  .hero-inner{position:relative;z-index:2;padding:90px 0 120px;max-width:780px;margin:0 auto;text-align:center}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.78rem;letter-spacing:.3em;color:var(--amber-hot);text-transform:uppercase}
+  .kicker .tx-star{width:14px;height:14px;fill:var(--amber-hot)}
+  .hero .kicker::before,.hero .kicker::after,.sec-head.center .kicker::before,.sec-head.center .kicker::after{content:"—";color:var(--amber-hot)}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(3rem,7.2vw,5.4rem);line-height:.95;color:#fff;text-transform:uppercase;letter-spacing:.012em;margin:18px 0 20px}
+  h1 .amber{color:var(--amber)}
+  .hero-sub{font-size:1.08rem;max-width:560px;margin:0 auto;color:var(--white-soft)}
+  .cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:1rem;padding:16px 30px;border-radius:12px;transition:transform .18s,background .2s,border-color .2s}
+  .btn svg{width:18px;height:18px}
+  .btn-amber{background:var(--amber);color:#161006;box-shadow:0 10px 30px -8px rgba(232,145,43,.55)}
+  .btn-amber:hover{background:var(--amber-hot);transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber-hot);transform:translateY(-2px)}
+  .proof-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:38px}
+  .chip{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:rgba(17,26,41,.72)}
+  .chip svg{width:15px;height:15px;stroke:var(--amber-hot)}
+  @media(max-width:640px){
+    .hero{min-height:auto}
+    .hero-inner{padding:70px 0 96px}
+    .hero-bg::after{background:linear-gradient(180deg,rgba(12,18,28,.94) 0%,rgba(12,18,28,.78) 55%,rgba(12,18,28,.92) 100%)}
+    .hero .kicker{display:inline;font-size:.7rem;letter-spacing:.22em;line-height:2}
+    .hero .kicker .tx-star{display:none}
+    .hero .kicker::before{content:"— "}
+    .hero .kicker::after{content:" —"}
+  }
+
+  /* ---------- section shells ---------- */
+  section{position:relative}
+  .sec-head{max-width:640px;margin-bottom:48px}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  h2{font-family:var(--display);font-weight:800;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1;text-transform:uppercase;letter-spacing:.015em;margin:14px 0 16px}
+  .light h2{color:var(--ink)}
+  .dark h2{color:#fff}
+  .light .sec-sub{color:var(--ink-soft)}
+  .light{background:var(--sand);color:var(--ink)}
+  .light .kicker{color:var(--amber-deep)}
+  .light .kicker .tx-star{fill:var(--amber-deep)}
+
+  /* ---------- services ---------- */
+  .services{padding:96px 0 110px;clip-path:polygon(0 0,100% 42px,100% 100%,0 100%);margin-top:-42px}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .svc{background:#fff;border:1px solid #e3dbc9;border-radius:var(--radius);padding:30px 26px;transition:transform .22s,box-shadow .22s;position:relative;overflow:hidden}
+  .svc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--amber);transform:scaleY(0);transform-origin:top;transition:transform .25s}
+  .svc:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(27,35,49,.28)}
+  .svc:hover::before{transform:scaleY(1)}
+  .svc-icon{width:48px;height:48px;border-radius:11px;background:var(--navy-900);display:grid;place-items:center;margin-bottom:18px}
+  .svc-icon svg{width:23px;height:23px;stroke:var(--amber-hot)}
+  .svc h3{font-family:var(--display);font-weight:700;font-size:1.42rem;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+  .svc p{font-size:.94rem;color:var(--ink-soft)}
+  @media(max-width:920px){.svc-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
+
+  /* ---------- guarantee band ---------- */
+  .band{background:var(--navy-900);border-block:1px solid var(--line);padding:58px 0}
+  .band-flex{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+  .band-quote{flex:1 1 380px}
+  .band-quote .tx-star{width:30px;height:30px;fill:var(--amber);margin-bottom:14px}
+  .band-quote p{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.15;color:#fff;text-transform:uppercase;letter-spacing:.02em}
+  .band-points{flex:1 1 340px;display:grid;gap:14px}
+  .bp{display:flex;gap:13px;align-items:flex-start}
+  .bp svg{width:20px;height:20px;stroke:var(--amber-hot);flex-shrink:0;margin-top:3px}
+  .bp b{color:#fff;display:block;font-size:.98rem}
+  .bp span{font-size:.88rem}
+
+  /* ---------- gallery ---------- */
+  .work{padding:96px 0 110px;background:var(--navy-950)}
+  .work-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px}
+  .tile{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--navy-800)}
+  .tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .tile:hover img{transform:scale(1.05)}
+  .tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 13px;background:linear-gradient(180deg,transparent,rgba(12,18,28,.88));font-weight:600;font-size:.83rem;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+  .tall{grid-row:span 2}
+  .wide{grid-column:span 2}
+  @media(max-width:900px){.work-grid{grid-template-columns:1fr 1fr;grid-auto-rows:190px}}
+  @media(max-width:540px){.work-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:10px}.tile figcaption{font-size:.7rem;padding:24px 10px 9px}}
+
+  /* ---------- heavy haul ---------- */
+  .haul{background:linear-gradient(180deg,var(--navy-900),var(--navy-950));border-block:1px solid var(--line);padding:100px 0}
+  .haul-flex{display:flex;align-items:center;gap:54px}
+  .haul-copy{flex:1 1 460px}
+  .haul-media{flex:1 1 480px;position:relative}
+  .haul-media img{border-radius:var(--radius);box-shadow:0 30px 60px -25px rgba(0,0,0,.7)}
+  .haul-media::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--amber);border-radius:var(--radius);z-index:-1;opacity:.5}
+  .haul-list{display:grid;gap:12px;margin:26px 0 32px}
+  .haul-list .bp b{font-size:1rem}
+  @media(max-width:900px){.haul-flex{flex-direction:column-reverse}.haul-media{width:100%}.haul-media::after{display:none}}
+
+  /* ---------- service area ---------- */
+  .area{padding:96px 0 110px}
+  .area-flex{display:flex;gap:48px;align-items:stretch;flex-wrap:wrap}
+  .area-copy{flex:1 1 380px}
+  .area-map{flex:1 1 440px;min-height:380px;border-radius:var(--radius);overflow:hidden;border:1px solid #ddd3bd;box-shadow:0 22px 50px -24px rgba(27,35,49,.3)}
+  .area-map iframe{width:100%;height:100%;border:0;display:block}
+  .towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .town{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #e3dbc9;border-radius:999px;padding:9px 16px;font-weight:600;font-size:.88rem;color:var(--ink)}
+  .town svg{width:14px;height:14px;stroke:var(--amber-deep)}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--navy-900);padding:100px 0 110px;border-top:1px solid var(--line)}
+  .contact-flex{display:flex;gap:56px;flex-wrap:wrap}
+  .contact-copy{flex:1 1 400px}
+  .contact-copy .big-num{display:inline-flex;align-items:center;gap:14px;font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4vw,2.7rem);color:#fff;margin:20px 0 8px;letter-spacing:.02em}
+  .contact-copy .big-num svg{width:28px;height:28px;stroke:var(--amber)}
+  .contact-copy .big-num:hover{color:var(--amber-hot)}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
+  .quote-card{flex:1 1 420px;background:#fff;border-radius:18px;padding:36px 32px;color:var(--ink);box-shadow:0 30px 70px -30px rgba(0,0,0,.6)}
+  .quote-card h3{font-family:var(--display);font-weight:800;font-size:1.7rem;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+  .quote-card .qc-sub{font-size:.9rem;color:var(--ink-soft);margin-bottom:22px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+  .field input,.field select,.field textarea{width:100%;font-family:var(--body);font-size:.98rem;padding:13px 14px;border:1.5px solid #d8d2c4;border-radius:10px;background:#faf8f3;color:var(--ink);outline:none;transition:border-color .2s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--amber)}
+  .field textarea{resize:vertical;min-height:92px}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.field-row{grid-template-columns:1fr}}
+  .quote-btn{width:100%;border:0;cursor:pointer;font-family:var(--body)}
+  .qc-note{margin-top:14px;font-size:.82rem;color:var(--ink-soft);text-align:center}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy-950);padding:44px 0 120px;border-top:1px solid var(--line)}
+  .foot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:.88rem}
+  .foot img{width:44px;height:44px;object-fit:contain;background:#10171f;border-radius:9px}
+  .foot .fname{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.04em;color:#fff;text-transform:uppercase}
+  .foot .sep{opacity:.35}
+  .foot a:hover{color:var(--amber-hot)}
+  @media(min-width:769px){footer{padding-bottom:44px}}
+
+  /* ---------- sticky mobile bar ---------- */
+  .mob-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+  .mob-bar a{display:flex;align-items:center;justify-content:center;gap:9px;padding:16px 10px;font-weight:700;font-size:.95rem}
+  .mob-bar svg{width:18px;height:18px}
+  .mob-call{background:var(--amber);color:#161006}
+  .mob-text{background:var(--navy-800);color:#fff}
+  @media(max-width:768px){.mob-bar{display:grid}}
+
+  /* ---------- reveal ---------- */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  .rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="txstar" viewBox="0 0 24 24"><path d="M12 1.5l2.7 7.2 7.8.3-6.1 4.9 2.1 7.6L12 17.2l-6.5 4.3 2.1-7.6-6.1-4.9 7.8-.3z"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <img src="assets/logo.jpg" alt="Lonestar Pro Solutions logo">
+      <span class="brand-name">Lonestar Pro Solutions<small>CONSTRUCTION · HEAVY HAUL</small></span>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#haul">Heavy Haul</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-pill" href="tel:+13617421170">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+      <span>(361) 742-1170</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap" style="width:100%">
+    <div class="hero-inner">
+      <span class="kicker rv in"><svg class="tx-star"><use href="#txstar"/></svg>Corpus Christi · Kingsville · Coastal Bend</span>
+      <h1 class="rv in rv-d1">Built Right.<br>Down to <span class="amber">the Detail.</span></h1>
+      <p class="hero-sub rv in rv-d2">Residential &amp; commercial construction backed by a 100% workmanship guarantee — remodeling, roofing, drywall, fencing, custom sheds and outdoor living. Free estimates on every job.</p>
+      <div class="cta-row rv in rv-d3">
+        <a class="btn btn-amber" href="tel:+13617421170">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+          Call (361) 742-1170
+        </a>
+        <a class="btn btn-ghost" href="#contact">Get a Free Estimate</a>
+      </div>
+      <div class="proof-row rv in rv-d3">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>100% Workmanship Guarantee</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Free Estimates</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Residential &amp; Commercial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light services" id="services">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>What We Do</span>
+      <h2>One Crew. Every Trade.</h2>
+      <p class="sec-sub">From the studs out — every job planned to the detail and backed by our 100% workmanship guarantee.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc rv">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg></div>
+        <h3>Remodeling</h3>
+        <p>Kitchens, bathrooms, room additions and full-home updates — framed, finished and cleaned up right.</p>
+      </div>
+      <div class="svc rv rv-d1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M12 9v6"/><path d="M16 15v6"/><path d="M16 3v6"/><path d="M3 15h18"/><path d="M3 9h18"/><path d="M8 15v6"/><path d="M8 3v6"/></svg></div>
+        <h3>Drywall &amp; Texturing</h3>
+        <p>Wall finish installation, patching, repair and texturing — smooth, matched and paint-ready.</p>
+      </div>
+      <div class="svc rv rv-d2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <h3>Roofing</h3>
+        <p>Roof repair and replacement built for Coastal Bend sun, wind and storms.</p>
+      </div>
+      <div class="svc rv">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3 2 5v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M6 8h4"/><path d="M6 18h4"/><path d="m12 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M14 8h4"/><path d="M14 18h4"/><path d="m20 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/></svg></div>
+        <h3>Fencing</h3>
+        <p>New privacy fences and repairs — straight lines, set posts, built to last.</p>
+      </div>
+      <div class="svc rv rv-d1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg></div>
+        <h3>Sheds &amp; Outdoor Living</h3>
+        <p>Custom storage sheds, pergolas, patio covers and pavilions — built on your site, your way.</p>
+      </div>
+      <div class="svc rv rv-d2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5"/></svg></div>
+        <h3>Landscaping &amp; Exterior</h3>
+        <p>Landscaping, exterior paint and touch-ups that finish the job — curb appeal included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-flex">
+    <div class="band-quote rv">
+      <svg class="tx-star"><use href="#txstar"/></svg>
+      <p>"Every job is planned out to the detail."</p>
+    </div>
+    <div class="band-points rv rv-d1">
+      <div class="bp">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><b>100% Workmanship Guarantee</b><span>We stand on quality — top-tier work, done on time.</span></div>
+      </div>
+      <div class="bp">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+        <div><b>Free Estimates</b><span>Straight answers and a clear plan before work begins.</span></div>
+      </div>
+      <div class="bp">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><b>Local &amp; Family-Run</b><span>Serving Corpus Christi, Kingsville and surrounding areas.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Recent Work</span>
+      <h2 style="color:#fff">Our Work Speaks First</h2>
+      <p class="sec-sub">Real jobs from our crews around the Coastal Bend.</p>
+    </div>
+    <div class="work-grid">
+      <figure class="tile wide rv"><img src="assets/fence.jpg" alt="New cedar privacy fence" loading="lazy"><figcaption>Privacy Fence · New Build</figcaption></figure>
+      <figure class="tile tall rv rv-d1"><img src="assets/pavilion.jpg" alt="Backyard pavilion with shingle roof" loading="lazy"><figcaption>Backyard Pavilion</figcaption></figure>
+      <figure class="tile rv rv-d2"><img src="assets/shed-finished.jpg" alt="Finished custom shed" loading="lazy"><figcaption>Custom Shed</figcaption></figure>
+      <figure class="tile rv"><img src="assets/bathroom.jpg" alt="Bathroom remodel" loading="lazy"><figcaption>Bath Remodel</figcaption></figure>
+      <figure class="tile tall rv rv-d1"><img src="assets/porch-red.jpg" alt="Finished porch gable and exterior paint" loading="lazy"><figcaption>Porch &amp; Exterior Paint</figcaption></figure>
+      <figure class="tile rv rv-d2"><img src="assets/shed-wood.jpg" alt="Custom wood shed build" loading="lazy"><figcaption>Shed Build</figcaption></figure>
+      <figure class="tile rv"><img src="assets/pergola.jpg" alt="Pergola construction" loading="lazy"><figcaption>Pergola Build</figcaption></figure>
+      <figure class="tile wide rv rv-d1"><img src="assets/hero-framing.jpg" alt="Structure framing in progress" loading="lazy"><figcaption>Framing · In Progress</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="haul" id="haul">
+  <div class="wrap haul-flex">
+    <div class="haul-copy rv">
+      <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Second Division</span>
+      <h2 style="color:#fff">Hot Shot &amp;<br>Heavy Haul</h2>
+      <p>When the oilfield needs it moved, we move it. Class A CDL drivers running flatbed, gooseneck, lowboy and winch truck loads across South Texas, West Texas and the Houston area.</p>
+      <div class="haul-list">
+        <div class="bp"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><div><b>Flatbed &amp; Gooseneck</b><span>Hot shot loads, on schedule.</span></div></div>
+        <div class="bp"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><path d="M6.5 8a2 2 0 0 0-1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z"/></svg><div><b>Lowboy &amp; Winch Truck</b><span>Heavy equipment and oversize moves.</span></div></div>
+        <div class="bp"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg><div><b>South TX · West TX · Houston</b><span>Consistent oilfield routes, wherever the job is.</span></div></div>
+      </div>
+      <a class="btn btn-amber" href="tel:+13617421170">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        Dispatch a Load
+      </a>
+    </div>
+    <div class="haul-media rv rv-d1">
+      <img src="assets/truck-lowboy.jpg" alt="Peterbilt winch truck with lowboy trailer hauling a dozer" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="light area" id="area">
+  <div class="wrap">
+    <div class="area-flex">
+      <div class="area-copy rv">
+        <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Service Area</span>
+        <h2>Proudly Coastal Bend</h2>
+        <p class="sec-sub">Based in Driscoll, working every day across Corpus Christi, Kingsville and the surrounding communities. If you're close, we'll come take a look — the estimate is free.</p>
+        <div class="towns">
+          <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Corpus Christi</span>
+          <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Kingsville</span>
+          <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Driscoll</span>
+          <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Surrounding Areas</span>
+        </div>
+      </div>
+      <div class="area-map rv rv-d1">
+        <iframe title="Lonestar Pro Solutions service area map" src="https://maps.google.com/maps?q=Driscoll,+TX&z=9&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-flex">
+    <div class="contact-copy rv">
+      <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Free Estimate</span>
+      <h2 style="color:#fff">Let's Walk Your Job</h2>
+      <p>Tell us what you're planning — a remodel, a fence, a shed, a roof — and we'll get you a straight answer and a free estimate.</p>
+      <a class="big-num" href="tel:+13617421170">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+        (361) 742-1170
+      </a>
+      <p style="font-size:.9rem">Call or text — se habla español.</p>
+      <div class="contact-actions">
+        <a class="btn btn-amber" href="tel:+13617421170">Call Now</a>
+        <a class="btn btn-ghost" href="sms:+13617421170">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>
+          Text Us a Photo
+        </a>
+      </div>
+    </div>
+    <form class="quote-card rv rv-d1" onsubmit="event.preventDefault();this.querySelector('.quote-btn').textContent='Request Sent ✓';alert('This is a demo preview — the form isn\'t hooked up yet.\n\nWant this site live for your business? Call or text Jeffrey at Zonkel Media: (361) 658-2912');">
+      <h3>Request Your Free Estimate</h3>
+      <p class="qc-sub">Takes 30 seconds. We'll call you back to set a time.</p>
+      <div class="field-row">
+        <div class="field"><label for="qn">Name</label><input id="qn" type="text" placeholder="Your name"></div>
+        <div class="field"><label for="qp">Phone</label><input id="qp" type="tel" placeholder="(361) 555-0123"></div>
+      </div>
+      <div class="field">
+        <label for="qs">What do you need?</label>
+        <select id="qs">
+          <option>Remodeling</option>
+          <option>Drywall &amp; Texturing</option>
+          <option>Roofing</option>
+          <option>Fencing</option>
+          <option>Shed / Outdoor Structure</option>
+          <option>Landscaping / Exterior</option>
+          <option>Hot Shot / Heavy Haul</option>
+          <option>Something Else</option>
+        </select>
+      </div>
+      <div class="field"><label for="qm">Tell us about the job</label><textarea id="qm" placeholder="Example: privacy fence, about 120 ft, backyard on a corner lot…"></textarea></div>
+      <button class="btn btn-amber quote-btn" type="submit">Request Free Estimate</button>
+      <p class="qc-note">Prefer to talk? Call <a href="tel:+13617421170" style="color:var(--amber-deep);font-weight:700">(361) 742-1170</a></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <img src="assets/logo.jpg" alt="">
+    <span class="fname">Lonestar Pro Solutions</span>
+    <span class="sep">|</span>
+    <a href="tel:+13617421170">(361) 742-1170</a>
+    <span class="sep">|</span>
+    <span>Driscoll, TX · Serving the Coastal Bend</span>
+    <span class="sep">|</span>
+    <a href="https://www.facebook.com/profile.php?id=61578606846074" target="_blank" rel="noopener">Facebook</a>
+  </div>
+</footer>
+
+<div class="mob-bar">
+  <a class="mob-call" href="tel:+13617421170">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+    Call Now
+  </a>
+  <a class="mob-text" href="sms:+13617421170">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>
+    Text Us
+  </a>
+</div>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.rv:not(.in)').forEach(el => io.observe(el));
+  // fail-safe: never leave a section invisible
+  setTimeout(() => document.querySelectorAll('.rv:not(.in)').forEach(el => el.classList.add('in')), 5000);
+</script>
+
+</body>
+</html>
