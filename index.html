@@ -28,7 +28,7 @@
   ],
   "openingHoursSpecification": [
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "00:00", "closes": "00:00"}
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "00:00", "closes": "00:00"}
   ],
   "address": {"@type": "PostalAddress", "addressLocality": "Robstown", "addressRegion": "TX", "postalCode": "78380", "addressCountry": "US"},
   "areaServed": [
@@ -316,7 +316,8 @@
   .bp svg{width:20px;height:20px;stroke:var(--kick-dark);flex-shrink:0;margin-top:3px}
   .bp b{color:var(--cream);display:block;font-size:1rem}
   .bp span{font-size:.9rem}
-  .com-video{flex:0 1 330px;position:relative}
+  .com-video{flex:0 1 430px;position:relative}
+  .com-video .reels{margin-top:0}
   .com-video video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:18px;border:1px solid rgba(var(--cream-rgb),.25);box-shadow:0 34px 70px -24px rgba(0,0,0,.8);background:#000}
   .com-video .vid-note{position:absolute;left:50%;bottom:-15px;transform:translateX(-50%);background:var(--btn);color:var(--on-btn);border-radius:999px;padding:7px 18px;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 10px 24px -8px rgba(0,0,0,.6)}
   .com-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:66px}
@@ -379,6 +380,48 @@
   .hours-line svg{width:17px;height:17px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;
     stroke-linecap:round;stroke-linejoin:round}
   @media(max-width:700px){.hours-line{font-size:.82rem;padding:8px 14px}}
+
+  /* ---------- portrait reel carousels ---------- */
+  .reels{--rgap:18px;margin-top:34px}
+  .reels-hint{text-align:center;font-size:.82rem;color:var(--ink-soft);margin-bottom:16px}
+  .reels.on-dark .reels-hint{color:var(--text-soft)}
+  .reels-row{display:flex;align-items:center;gap:12px}
+  .reels-view{overflow:hidden;flex:1 1 auto;min-width:0}
+  .reels-track{display:flex;gap:var(--rgap);transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
+  .reel{flex:0 0 auto;min-width:0;margin:0}
+  .reel-media{position:relative;border-radius:16px;overflow:hidden;background:#000;
+    border:1px solid rgba(var(--acc-rgb),.22);box-shadow:0 24px 50px -22px rgba(var(--shadow-rgb),.55)}
+  .reels.on-dark .reel-media{border-color:rgba(var(--cream-rgb),.22);box-shadow:0 30px 64px -24px rgba(0,0,0,.8)}
+  .reel-media video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
+  .reel-mute{position:absolute;right:10px;bottom:10px;width:40px;height:40px;border-radius:50%;
+    background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.32);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  .reel-mute svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .reel-mute .ic-on{display:none}
+  .reel-mute.is-on .ic-on{display:block}
+  .reel-mute.is-on .ic-off{display:none}
+  .reel figcaption{margin-top:13px;text-align:center}
+  .reel figcaption b{display:block;font-weight:800;font-size:.95rem;color:var(--ink)}
+  .reel figcaption span{font-size:.83rem;color:var(--ink-soft)}
+  .reels.on-dark .reel figcaption b{color:var(--cream)}
+  .reels.on-dark .reel figcaption span{color:var(--text-soft)}
+  .reel-nav{flex:0 0 auto;width:44px;height:44px;border-radius:50%;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--white);border:1px solid rgba(var(--acc-rgb),.3);transition:opacity .2s,background .2s}
+  .reels.on-dark .reel-nav{background:rgba(var(--cream-rgb),.08);border-color:rgba(var(--cream-rgb),.24)}
+  .reel-nav svg{width:20px;height:20px;fill:none;stroke:var(--green-deep);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .reels.on-dark .reel-nav svg{stroke:var(--cream)}
+  .reel-nav:disabled{opacity:.28;cursor:default}
+  .reels.is-single .reel-nav,.reels.is-single .reel-dots{display:none}
+  .reel-dots{display:flex;justify-content:center;gap:7px;margin-top:20px}
+  .reel-dots i{width:7px;height:7px;border-radius:999px;background:rgba(var(--acc-rgb),.3);transition:width .25s,background .25s}
+  .reels.on-dark .reel-dots i{background:rgba(var(--cream-rgb),.28)}
+  .reel-dots i.on{width:22px;background:var(--green)}
+  @media(max-width:640px){
+    .reels{--rgap:14px}
+    .reel-nav{width:38px;height:38px}
+    .reels-row{gap:8px}
+  }
 
   /* ---------- HTeaO build stages ---------- */
   .stage-cue{display:inline-flex;align-items:center;gap:9px;margin-bottom:14px;padding:9px 16px;border-radius:999px;
@@ -966,8 +1009,30 @@
         </a>
       </div>
       <div class="com-video rv rv-d1">
-        <video src="assets/commercial-walkthrough.mp4" poster="assets/walkthrough-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of a completed commercial project"></video>
-        <span class="vid-note">Real Job · Real Crew</span>
+        <div class="reels on-dark" data-perview="1,1,1">
+          <p class="reels-hint">Playing muted &mdash; tap the speaker for sound.</p>
+              <div class="reels-row">
+            <button class="reel-nav reel-prev" type="button" aria-label="Previous videos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+                <div class="reels-view"><div class="reels-track">
+            <figure class="reel">
+              <div class="reel-media">
+                <video src="assets/reel-hteao-site.mp4" poster="assets/reel-hteao-site-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of a finished commercial site"></video>
+                <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+              </div>
+              <figcaption><b>Site Walkthrough</b><span>Screen wall, drive-thru and storefront</span></figcaption>
+            </figure>
+            <figure class="reel">
+              <div class="reel-media">
+                <video src="assets/reel-framing.mp4" poster="assets/reel-framing-poster.jpg" muted loop playsinline preload="none" aria-label="Crew nailing off ceiling framing"></video>
+                <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+              </div>
+              <figcaption><b>Framing Package</b><span>Joists and rafters going up</span></figcaption>
+            </figure>
+            </div></div>
+            <button class="reel-nav reel-next" type="button" aria-label="More videos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+          <div class="reel-dots" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1096,6 +1161,44 @@
       <figure class="tile rv rv-d2"><img src="assets/bathroom.jpg" alt="Remodeled bathroom with double vanity" loading="lazy"><figcaption>Bathroom Remodel</figcaption></figure>
       <figure class="tile rv rv-d2"><img src="assets/pavilion.jpg" alt="Backyard pavilion with shingle roof" loading="lazy"><figcaption>Backyard Pavilion</figcaption></figure>
     </div>
+    <div class="reels" data-perview="1,2,4">
+      <p class="reels-hint">Video from the jobs &mdash; playing muted. Tap the speaker for sound.</p>
+      <div class="reels-row">
+        <button class="reel-nav reel-prev" type="button" aria-label="Previous videos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+        <div class="reels-view"><div class="reels-track">
+        <figure class="reel">
+          <div class="reel-media">
+            <video src="assets/reel-interior.mp4" poster="assets/reel-interior-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of a finished interior remodel"></video>
+            <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+          </div>
+          <figcaption><b>Interior Remodel</b><span>New flooring, trim and paint</span></figcaption>
+        </figure>
+        <figure class="reel">
+          <div class="reel-media">
+            <video src="assets/reel-bath.mp4" poster="assets/reel-bath-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of a remodeled bathroom with a tiled shower"></video>
+            <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+          </div>
+          <figcaption><b>Tile Shower</b><span>Full bathroom remodel</span></figcaption>
+        </figure>
+        <figure class="reel">
+          <div class="reel-media">
+            <video src="assets/reel-kitchen.mp4" poster="assets/reel-kitchen-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of a finished kitchen remodel"></video>
+            <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+          </div>
+          <figcaption><b>Kitchen Remodel</b><span>Cabinets, quartz and backsplash</span></figcaption>
+        </figure>
+        <figure class="reel">
+          <div class="reel-media">
+            <video src="assets/reel-porch.mp4" poster="assets/reel-porch-poster.jpg" muted loop playsinline preload="none" aria-label="Covered porch on a finished waterfront remodel"></video>
+            <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+          </div>
+          <figcaption><b>Covered Porch</b><span>Waterfront remodel</span></figcaption>
+        </figure>
+        </div></div>
+        <button class="reel-nav reel-next" type="button" aria-label="More videos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
+      <div class="reel-dots" aria-hidden="true"></div>
+    </div>
   </div>
 </section>
 
@@ -1150,7 +1253,7 @@
         (361) 742-1170
       </a>
       <p style="font-size:.9rem">Call or text &mdash; se habla español.</p>
-      <p class="hours-line"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg> Mon &ndash; Fri, 7:00 AM &ndash; 6:00 PM</p>
+      <p class="hours-line"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg> Mon &ndash; Fri, 7:00 AM &ndash; 6:00 PM &middot; Sat by appointment</p>
       <div class="contact-actions">
         <a class="btn btn-gold" href="tel:+13617421170">Call Now</a>
         <a class="btn btn-ghost" href="sms:+13617421170">
@@ -1254,7 +1357,7 @@
         <a class="foot-link" href="sms:+13617421170">Text us a job photo</a>
         <p>Free estimates on every job.<br>Se habla espa&ntilde;ol.</p>
         <p>Robstown, TX</p>
-        <p class="foot-hours"><b>Hours</b><span>Mon &ndash; Fri &middot; 7:00 AM &ndash; 6:00 PM</span><span>Sat &amp; Sun &middot; Closed</span></p>
+        <p class="foot-hours"><b>Hours</b><span>Mon &ndash; Fri &middot; 7:00 AM &ndash; 6:00 PM</span><span>Sat &middot; By appointment</span><span>Sun &middot; Closed</span></p>
       </div>
 
     </div>
@@ -1360,11 +1463,7 @@
     if (e.key === 'ArrowRight') lbShow(lbAt + 1);
   });
 
-  // commercial walkthrough video plays only while on screen
-  const vid = document.querySelector('.com-video video');
-  new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) { vid.play().catch(() => {}); } else { vid.pause(); }
-  }, { threshold: 0.35 }).observe(vid);
+  // reel playback is handled by the carousel script below
 </script>
 
 
@@ -1502,6 +1601,99 @@
       obs.disconnect();
     }
   }, {threshold:0.4}).observe(root);
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.reels').forEach(function(root){
+    var track  = root.querySelector('.reels-track');
+    var view   = root.querySelector('.reels-view');
+    var slides = [].slice.call(root.querySelectorAll('.reel'));
+    var prev   = root.querySelector('.reel-prev');
+    var next   = root.querySelector('.reel-next');
+    var dots   = root.querySelector('.reel-dots');
+    var per    = (root.getAttribute('data-perview') || '1,2,4').split(',').map(Number);
+    var page   = 0;
+
+    function perView(){
+      var w = window.innerWidth;
+      return w >= 1024 ? per[2] : (w >= 640 ? per[1] : per[0]);
+    }
+    function pages(){ return Math.ceil(slides.length / perView()); }
+
+    function render(){
+      var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      track.style.transform = 'translateX(calc(' + (-page) + ' * (100% + ' + gap + 'px)))';
+      prev.disabled = page === 0;
+      next.disabled = page >= pages() - 1;
+      [].forEach.call(dots.children, function(d, i){ d.classList.toggle('on', i === page); });
+    }
+
+    function layout(){
+      var pv = perView(), n = pages();
+      var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      slides.forEach(function(s){
+        s.style.flexBasis = 'calc((100% - ' + ((pv - 1) * gap) + 'px) / ' + pv + ')';
+      });
+      root.classList.toggle('is-single', n <= 1);
+      dots.innerHTML = '';
+      for (var i = 0; i < n; i++) dots.appendChild(document.createElement('i'));
+      if (page > n - 1) page = n - 1;
+      if (page < 0) page = 0;
+      render();
+    }
+
+    function go(n){
+      var last = pages() - 1;
+      page = n < 0 ? 0 : (n > last ? last : n);
+      render();
+    }
+    prev.addEventListener('click', function(){ go(page - 1); });
+    next.addEventListener('click', function(){ go(page + 1); });
+
+    // swipe
+    var x0 = null, y0 = null;
+    view.addEventListener('touchstart', function(e){
+      var t = e.changedTouches[0]; x0 = t.clientX; y0 = t.clientY;
+    }, {passive:true});
+    view.addEventListener('touchend', function(e){
+      if (x0 === null) return;
+      var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+      if (Math.abs(dx) > 38 && Math.abs(dx) > Math.abs(dy)) go(page + (dx < 0 ? 1 : -1));
+      x0 = y0 = null;
+    }, {passive:true});
+    view.addEventListener('touchcancel', function(){ x0 = y0 = null; });
+
+    // play only what is actually on screen
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var v = en.target;
+        if (en.isIntersecting) {
+          if (v.preload === 'none') v.preload = 'metadata';
+          v.play().catch(function(){});
+        } else {
+          v.pause();
+        }
+      });
+    }, {threshold: 0.3});
+
+    slides.forEach(function(fig){
+      var v = fig.querySelector('video');
+      io.observe(v);
+      var btn = fig.querySelector('.reel-mute');
+      btn.addEventListener('click', function(){
+        v.muted = !v.muted;
+        btn.classList.toggle('is-on', !v.muted);
+        btn.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off');
+        if (!v.muted) v.play().catch(function(){});
+      });
+    });
+
+    var t;
+    window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(layout, 150); });
+    layout();
+  });
 })();
 </script>
 </body>
