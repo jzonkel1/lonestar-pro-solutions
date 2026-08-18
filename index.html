@@ -431,8 +431,13 @@
     .about-flex{flex-direction:column;gap:30px}
     .about-copy{flex:0 0 auto}
     .about-copy{text-align:center}
-    .about-chips{justify-content:center}
-    .about-photo{flex:none;width:min(380px,88%)}
+    /* two-up instead of a four-high stack, same as the featured-project pills */
+    .about-chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:430px;margin-inline:auto}
+    .about-chips .chip{justify-content:center;text-align:center;font-size:.78rem;padding:10px 8px;line-height:1.25}
+    /* full-bleed so it actually reads big on a phone */
+    .about-photo{flex:none;width:100vw;margin-inline:calc(50% - 50vw);
+      border-radius:0;border-left:0;border-right:0;box-shadow:none}
+    .about-photo img{max-height:none;aspect-ratio:4/5;height:auto;object-fit:cover;object-position:center 38%}
   }
 
   .about .chip{background:var(--white);border-color:var(--line);color:var(--ink);backdrop-filter:none;box-shadow:0 7px 18px -12px rgba(var(--shadow-rgb),.5)}
@@ -628,7 +633,10 @@
     .feat-logo{height:76px}
     .hero-sub,.sec-sub,.contact-copy p,.feat-copy .sec-sub{margin-inline:auto}
     /* and centre the things that hang off them */
-    .feat-scope,.towns,.contact-actions,.about-chips,.more-strip{justify-content:center}
+    .towns,.contact-actions,.about-chips,.more-strip{justify-content:center}
+    /* four scope pills stacked four-high pushed the photo too far down */
+    .feat-scope{display:grid;grid-template-columns:1fr 1fr;gap:8px;justify-content:stretch}
+    .scope{justify-content:center;text-align:center;font-size:.76rem;padding:9px 8px;line-height:1.25}
     .big-num{justify-content:center}
     .com-copy .btn,.contact-copy .btn{margin-inline:auto}
     /* bullet rows stay left-read but the stack itself centres */
