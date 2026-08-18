@@ -353,6 +353,12 @@
     .feat-tile img{aspect-ratio:16/10}
   }
 
+  .work-cue{display:inline-flex;align-items:center;gap:9px;margin-top:18px;padding:9px 17px;border-radius:999px;
+    background:var(--paper);border:1px solid var(--line);color:var(--ink);font-size:.83rem;font-weight:700}
+  .work-cue svg{width:19px;height:19px;flex-shrink:0;fill:none;stroke:var(--green-deep);stroke-width:1.8;
+    stroke-linecap:round;stroke-linejoin:round;animation:cueTap 2.4s ease-in-out infinite}
+  @media(max-width:700px){.work-cue{font-size:.79rem;padding:8px 15px;margin-top:16px}}
+
   /* ---------- HTeaO build stages ---------- */
   .stage-cue{display:inline-flex;align-items:center;gap:9px;margin-bottom:14px;padding:9px 16px;border-radius:999px;
     background:var(--paper);border:1px solid var(--line);color:var(--ink);font-size:.83rem;font-weight:700}
@@ -1041,6 +1047,7 @@
       <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Recent Work</span>
       <h2 class="extrude">Our Work Speaks First</h2>
       <p class="sec-sub">Real jobs from our crews around the Coastal Bend.</p>
+      <p class="work-cue rv rv-d1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V6a2 2 0 0 1 4 0v5"/><path d="M13 11V7.5a2 2 0 0 1 4 0V11"/><path d="M17 11.5V9a2 2 0 0 1 4 0v6a6 6 0 0 1-6 6h-2a7 7 0 0 1-7-7v-1a2 2 0 0 1 4 0"/></svg><span class="cue-wide">Click any photo to see it full size</span><span class="cue-narrow">Tap any photo to see it full size</span></p>
     </div>
     <div class="work-grid">
       <figure class="tile tall rv"><img src="assets/roof-framing-bay.jpg" alt="Roof framing on a waterfront build" loading="lazy"><figcaption>Roof Framing</figcaption></figure>
