@@ -399,6 +399,23 @@
   .about-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;max-width:430px}
   .about-photo{flex:0 1 380px;align-self:center;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 52px -26px rgba(var(--shadow-rgb),.45)}
   .about-photo img{width:100%;height:auto;max-height:600px;object-fit:cover;object-position:center 30%;display:block}
+  @media(min-width:901px){
+    /* the photo leaves the grid, runs to the edge of the screen and
+       dissolves into the section rather than sitting in a frame */
+    .about{padding:0}
+    .about-flex{align-items:stretch;gap:0;min-height:min(76vh,660px)}
+    .about-copy{display:flex;flex-direction:column;justify-content:center;
+      flex:0 1 520px;max-width:520px;padding:104px 56px 112px 0;z-index:2}
+    .about-photo{position:absolute;top:0;bottom:0;height:auto;align-self:stretch;right:calc(50% - 50vw);
+      flex:none;width:min(56vw,760px);border:0;border-radius:0;box-shadow:none;overflow:hidden;
+      -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 16%,#000 42%);
+      mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 16%,#000 42%)}
+    .about-photo img{width:100%;height:100%;max-height:none;object-position:center 32%}
+  }
+  @media(min-width:901px) and (max-width:1180px){
+    .about-copy{padding-right:40px;flex:0 1 440px;max-width:440px}
+    .about-photo{width:min(52vw,620px)}
+  }
   @media(max-width:900px){
     .about-flex{flex-direction:column;gap:30px}
     .about-copy{flex:0 0 auto}
