@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600;1,800&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/hero-raise.jpg" media="(min-width: 701px)">
-<link rel="preload" as="image" href="assets/hero-raise-mobile.jpg" media="(max-width: 700px)">
+<link rel="preload" as="image" href="assets/hero-detail.jpg" media="(min-width: 701px)">
+<link rel="preload" as="image" href="assets/hero-detail-mobile.jpg" media="(max-width: 700px)">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -112,7 +112,7 @@
   /* ---------- hero ---------- */
   .hero{position:relative;min-height:min(76vh,720px);display:flex;align-items:center;overflow:hidden}
   .hero-bg{position:absolute;inset:0}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:44% 40%;animation:heroZoom 28s ease-out forwards}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:42% 55%;animation:heroZoom 28s ease-out forwards}
   @keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.14)}}
   .hero-veil{position:absolute;inset:0;background:linear-gradient(100deg,rgba(var(--veil),.9) 0%,rgba(var(--veil),.78) 30%,rgba(var(--veil),.48) 55%,rgba(var(--veil),.2) 76%,rgba(var(--veil),.08) 100%),linear-gradient(180deg,rgba(var(--veil),.34) 0%,transparent 28%,transparent 68%,rgba(var(--veil),.55) 100%)}
   .hero::after{content:'';display:none;position:absolute;left:0;right:0;bottom:0;height:92px;z-index:1;pointer-events:none;
@@ -332,6 +332,46 @@
     .feat-tile img{aspect-ratio:16/10}
   }
 
+  /* ---------- HTeaO build stages ---------- */
+  .stage-cue{display:inline-flex;align-items:center;gap:9px;margin-bottom:14px;padding:9px 16px;border-radius:999px;
+    background:var(--paper);border:1px solid var(--line);color:var(--ink);font-size:.83rem;font-weight:700}
+  .stage-cue svg{width:19px;height:19px;fill:none;stroke:var(--green-deep);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+    animation:cueTap 2.4s ease-in-out infinite}
+  @keyframes cueTap{0%,72%,100%{transform:translateX(0)}80%{transform:translateX(5px)}88%{transform:translateX(1px)}}
+  .stage-view{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 22px 48px -26px rgba(var(--shadow-rgb),.5);height:clamp(300px,34vw,470px);background:var(--sand);
+    cursor:pointer;touch-action:pan-y}
+  .stage-shot{position:absolute;inset:0;opacity:0;transition:opacity .45s ease}
+  .stage-shot.is-on{opacity:1}
+  .stage-shot img{width:100%;height:100%;object-fit:cover}
+  .stage-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;display:flex;align-items:center;justify-content:center;
+    width:46px;height:46px;border:0;border-radius:50%;background:rgba(var(--veil),.62);color:var(--cream);cursor:pointer;
+    backdrop-filter:blur(4px);transition:background .2s,opacity .2s}
+  .stage-arrow svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .stage-arrow:hover{background:rgba(var(--veil),.85)}
+  .stage-arrow.prev{left:14px}
+  .stage-arrow.next{right:14px}
+  .stage-arrow[disabled]{opacity:.28;cursor:default}
+  .stage-count{position:absolute;right:14px;bottom:12px;z-index:3;padding:5px 11px;border-radius:999px;
+    background:rgba(var(--veil),.62);color:var(--cream);font-size:.76rem;font-weight:700;letter-spacing:.06em}
+  .stage-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+  .stage-step{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:13px 15px;cursor:pointer;text-align:left;
+    background:var(--white);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:12px;
+    font-family:var(--body);transition:border-color .25s,background .25s,transform .25s}
+  .stage-step b{font-size:.72rem;letter-spacing:.12em;color:var(--ink-soft);font-weight:800}
+  .stage-step span{font-size:.92rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+  .stage-step:hover{transform:translateY(-2px);border-color:var(--line)}
+  .stage-step.is-on{border-top-color:var(--green);background:var(--paper)}
+  .stage-step.is-on b{color:var(--green-deep)}
+  @media(max-width:700px){
+    .stage-view{height:clamp(240px,62vw,340px)}
+    .stage-rail{grid-template-columns:1fr;gap:8px}
+    .stage-step{flex-direction:row;align-items:center;gap:10px;border-top-width:1px;border-left:3px solid var(--line);padding:11px 14px}
+    .stage-step.is-on{border-top-color:var(--line);border-left-color:var(--green)}
+    .stage-arrow{width:40px;height:40px}
+    .stage-cue{font-size:.79rem;padding:8px 14px}
+  }
+
   /* ---------- about / family-run ---------- */
   .about{background:var(--sand);padding:104px 0 112px;position:relative;overflow:hidden}
   .about::before{content:"";position:absolute;inset:0;background:radial-gradient(880px 460px at 90% 14%,rgba(var(--acc-rgb),.10),transparent 62%);pointer-events:none}
@@ -377,7 +417,7 @@
   @media(max-width:540px){.work-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.tile figcaption{font-size:.68rem;padding:24px 9px 8px}}
 
   /* ---------- lightbox ---------- */
-  .tile{cursor:zoom-in}
+  .tile,.about-photo{cursor:zoom-in}
   .tile:focus-visible{outline:3px solid var(--green);outline-offset:3px}
   .lb{position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;padding:26px;background:rgba(8,10,9,.975);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s}
   body.lb-open .lb{opacity:1;visibility:visible}
@@ -600,8 +640,8 @@
 <section class="hero" id="top">
   <div class="hero-bg">
     <picture>
-      <source media="(max-width:700px)" srcset="assets/hero-raise-mobile.jpg">
-      <img src="assets/hero-raise.jpg" alt="Lonestar Pro Solutions crew raising a framed wall on a Coastal Bend build">
+      <source media="(max-width:700px)" srcset="assets/hero-detail-mobile.jpg">
+      <img src="assets/hero-detail.jpg" alt="Framing detail work on a Lonestar Pro Solutions build">
     </picture>
   </div>
   <div class="hero-veil"></div>
@@ -831,24 +871,32 @@
         </div>
       </div>
     </div>
-    <div class="feat-grid">
-      <figure class="feat-lead rv">
-        <img src="assets/hteao-finished.jpg" alt="Finished HTeaO storefront in Kingsville built by Lonestar Pro Solutions" loading="lazy">
-        <figcaption>Finished &middot; Kingsville</figcaption>
-      </figure>
-      <div class="feat-side">
-        <figure class="feat-tile rv rv-d1">
-          <img src="assets/hteao-framing.jpg" alt="HTeaO framing shell going up" loading="lazy">
-          <figcaption>Framing Package</figcaption>
+    <div class="stage rv" id="stage">
+      <div class="stage-cue">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V6a2 2 0 0 1 4 0v5"/><path d="M13 11V7.5a2 2 0 0 1 4 0V11"/><path d="M17 11.5V9a2 2 0 0 1 4 0v6a6 6 0 0 1-6 6h-2a7 7 0 0 1-7-7v-1a2 2 0 0 1 4 0"/></svg>
+        <span>Tap through the build &mdash; framing to finished</span>
+      </div>
+
+      <div class="stage-view">
+        <figure class="stage-shot is-on" data-i="0">
+          <img src="assets/hteao-framing.jpg" alt="HTeaO commercial shell being framed" loading="lazy">
         </figure>
-        <figure class="feat-tile rv rv-d2">
+        <figure class="stage-shot" data-i="1">
           <img src="assets/hteao-wrap.jpg" alt="Sheathing and exterior waterproofing on the HTeaO build" loading="lazy">
-          <figcaption>Sheathing &amp; Wrap</figcaption>
         </figure>
-        <figure class="feat-tile rv rv-d3">
-          <img src="assets/hteao-day.jpg" alt="HTeaO storefront complete and open" loading="lazy">
-          <figcaption>Doors Open</figcaption>
+        <figure class="stage-shot" data-i="2">
+          <img src="assets/hteao-finished.jpg" alt="Finished HTeaO storefront in Kingsville" loading="lazy">
         </figure>
+
+        <button class="stage-arrow prev" type="button" id="stagePrev" aria-label="Previous stage"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="stage-arrow next" type="button" id="stageNext" aria-label="Next stage"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+        <span class="stage-count" id="stageCount">1 / 3</span>
+      </div>
+
+      <div class="stage-rail" role="tablist" aria-label="Build stages">
+        <button class="stage-step is-on" type="button" role="tab" aria-selected="true" data-i="0"><b>01</b><span>Framing Package</span></button>
+        <button class="stage-step" type="button" role="tab" aria-selected="false" data-i="1"><b>02</b><span>Sheathing &amp; Wrap</span></button>
+        <button class="stage-step" type="button" role="tab" aria-selected="false" data-i="2"><b>03</b><span>Finished &middot; Kingsville</span></button>
       </div>
     </div>
   </div>
@@ -868,7 +916,7 @@
       </div>
     </div>
     <figure class="about-photo rv rv-d1">
-      <img src="assets/about-crew.jpg" alt="Lonestar Pro Solutions crew working a commercial job in the Coastal Bend" loading="lazy">
+      <img src="assets/about-crew.jpg" alt="Our Crew On Site" loading="lazy">
     </figure>
   </div>
 </section>
@@ -1125,10 +1173,11 @@
   const lbImg = document.getElementById('lbImg');
   const lbCap = document.getElementById('lbCap');
   const lbCount = document.getElementById('lbCount');
-  const shots = [...document.querySelectorAll('.work-grid .tile')].map(f => ({
+  const LB_SEL = '.work-grid .tile, .about-photo';
+  const shots = [...document.querySelectorAll(LB_SEL)].map(f => ({
     src: f.querySelector('img').src,
     alt: f.querySelector('img').alt,
-    cap: (f.querySelector('figcaption') || {}).textContent || ''
+    cap: ((f.querySelector('figcaption') || {}).textContent || f.querySelector('img').alt || '').trim()
   }));
   let lbAt = 0;
   const lbShow = i => {
@@ -1141,10 +1190,10 @@
   };
   const lbOpen = i => { lbShow(i); document.body.classList.add('lb-open'); document.body.style.overflow = 'hidden'; document.getElementById('lbClose').focus(); };
   const lbClose = () => { document.body.classList.remove('lb-open'); document.body.style.overflow = ''; };
-  document.querySelectorAll('.work-grid .tile').forEach((f, i) => {
+  document.querySelectorAll(LB_SEL).forEach((f, i) => {
     f.tabIndex = 0;
     f.setAttribute('role', 'button');
-    f.setAttribute('aria-label', 'View photo: ' + ((f.querySelector('figcaption') || {}).textContent || ''));
+    f.setAttribute('aria-label', 'View photo: ' + shots[i].cap);
     f.addEventListener('click', () => lbOpen(i));
     f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); lbOpen(i); } });
   });
@@ -1209,6 +1258,65 @@
       alert('Preview build \u2014 this form is not connected yet.\n\nBefore launch every request will go straight to your email and phone. Nothing sent right now is lost, but nothing is delivered either.');
     }
   });
+})();
+</script>
+
+<script>
+(function(){
+  var root = document.getElementById('stage');
+  if (!root) return;
+  var shots = [].slice.call(root.querySelectorAll('.stage-shot'));
+  var steps = [].slice.call(root.querySelectorAll('.stage-step'));
+  var prev = document.getElementById('stagePrev');
+  var next = document.getElementById('stageNext');
+  var count = document.getElementById('stageCount');
+  var at = 0, touched = false;
+
+  function show(i){
+    at = Math.max(0, Math.min(shots.length - 1, i));
+    shots.forEach(function(s, n){ s.classList.toggle('is-on', n === at); });
+    steps.forEach(function(s, n){
+      s.classList.toggle('is-on', n === at);
+      s.setAttribute('aria-selected', n === at ? 'true' : 'false');
+    });
+    count.textContent = (at + 1) + ' / ' + shots.length;
+    prev.disabled = at === 0;
+    next.disabled = at === shots.length - 1;
+    if (!touched){ touched = true; root.classList.add('is-touched'); }
+  }
+
+  prev.addEventListener('click', function(e){ e.stopPropagation(); show(at - 1); });
+  next.addEventListener('click', function(e){ e.stopPropagation(); show(at + 1); });
+  steps.forEach(function(s){ s.addEventListener('click', function(){ show(+s.dataset.i); }); });
+
+  // tapping the photo itself advances, and wraps at the end
+  root.querySelector('.stage-view').addEventListener('click', function(){
+    show(at === shots.length - 1 ? 0 : at + 1);
+  });
+
+  // swipe on touch
+  var x0 = null;
+  var view = root.querySelector('.stage-view');
+  view.addEventListener('touchstart', function(e){ x0 = e.changedTouches[0].clientX; }, {passive:true});
+  view.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 45) show(at + (dx < 0 ? 1 : -1));
+    x0 = null;
+  }, {passive:true});
+
+  show(0);
+
+  // nudge the arrow once when the block first scrolls into view, so it reads as interactive
+  new IntersectionObserver(function(entries, obs){
+    if (entries[0].isIntersecting && !touched){
+      next.animate(
+        [{transform:'translateY(-50%) scale(1)'},{transform:'translateY(-50%) scale(1.18)'},{transform:'translateY(-50%) scale(1)'}],
+        {duration:620, iterations:3, easing:'ease-in-out'}
+      );
+      obs.disconnect();
+    }
+  }, {threshold:0.4}).observe(root);
 })();
 </script>
 </body>
