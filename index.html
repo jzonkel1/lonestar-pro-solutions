@@ -396,13 +396,6 @@
     border:1px solid rgba(var(--acc-rgb),.22);box-shadow:0 24px 50px -22px rgba(var(--shadow-rgb),.55)}
   .reels.on-dark .reel-media{border-color:rgba(var(--cream-rgb),.22);box-shadow:0 30px 64px -24px rgba(0,0,0,.8)}
   .reel-media video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
-  .reel-mute{position:absolute;right:10px;bottom:10px;width:40px;height:40px;border-radius:50%;
-    background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.32);cursor:pointer;
-    display:flex;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-  .reel-mute svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .reel-mute .ic-on{display:none}
-  .reel-mute.is-on .ic-on{display:block}
-  .reel-mute.is-on .ic-off{display:none}
   .reel figcaption{margin-top:13px;text-align:center}
   .reel figcaption b{display:block;font-weight:800;font-size:.95rem;color:var(--ink)}
   .reel figcaption span{font-size:.83rem;color:var(--ink-soft)}
@@ -1020,49 +1013,43 @@
       </div>
       <div class="com-video rv rv-d1">
         <div class="reels on-dark" data-perview="1,1,1">
-          <p class="reels-hint">Playing muted &mdash; tap the speaker for sound.</p>
+          <p class="reels-hint"><span class="cue-wide">Click through the build &mdash; framing to finished</span><span class="cue-narrow">Swipe through the build &mdash; framing to finished</span></p>
               <div class="reels-row">
             <button class="reel-nav reel-prev" type="button" aria-label="Previous videos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
                 <div class="reels-view"><div class="reels-track">
             <figure class="reel">
               <div class="reel-media">
                 <video src="assets/reel-hteao-framing.mp4" poster="assets/reel-hteao-framing-poster.jpg" muted loop playsinline preload="none" aria-label="Interior framing and roof trusses on a commercial shell"></video>
-                <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
               </div>
               <figcaption><b>Framing Package</b><span>Trusses and interior walls up</span></figcaption>
             </figure>
             <figure class="reel">
               <div class="reel-media">
                 <video src="assets/reel-hteao-site.mp4" poster="assets/reel-hteao-site-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of the finished commercial site"></video>
-                <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
               </div>
               <figcaption><b>Site Walkthrough</b><span>Screen wall, drive-thru and storefront</span></figcaption>
             </figure>
             <figure class="reel">
               <div class="reel-media">
                 <video src="assets/reel-hteao-facade.mp4" poster="assets/reel-hteao-facade-poster.jpg" muted loop playsinline preload="none" aria-label="Exterior facade panels being installed over the framed shell"></video>
-                <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
               </div>
               <figcaption><b>Facade Going On</b><span>Panel system over the shell</span></figcaption>
             </figure>
             <figure class="reel">
               <div class="reel-media">
                 <video src="assets/reel-hteao-panels.mp4" poster="assets/reel-hteao-panels-poster.jpg" muted loop playsinline preload="none" aria-label="Finished multi-tone exterior panel cladding"></video>
-                <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
               </div>
               <figcaption><b>Finished Panels</b><span>Multi-tone exterior cladding</span></figcaption>
             </figure>
             <figure class="reel">
               <div class="reel-media">
                 <video src="assets/reel-hteao-exterior.mp4" poster="assets/reel-hteao-exterior-poster.jpg" muted loop playsinline preload="none" aria-label="Completed commercial exterior and entry"></video>
-                <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
               </div>
               <figcaption><b>Exterior Complete</b><span>Entry and storefront</span></figcaption>
             </figure>
             <figure class="reel">
               <div class="reel-media">
                 <video src="assets/reel-hteao-interior.mp4" poster="assets/reel-hteao-interior-poster.jpg" muted loop playsinline preload="none" aria-label="Finished commercial interior with counters and menu boards"></video>
-                <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
               </div>
               <figcaption><b>Doors Open</b><span>Finished interior, ready for business</span></figcaption>
             </figure>
@@ -1201,42 +1188,37 @@
       <figure class="tile rv rv-d2"><img src="assets/pavilion.jpg" alt="Backyard pavilion with shingle roof" loading="lazy"><figcaption>Backyard Pavilion</figcaption></figure>
     </div>
     <div class="reels" data-perview="1,2,4">
-      <p class="reels-hint">Video from the jobs &mdash; playing muted. Tap the speaker for sound.</p>
+      <p class="reels-hint"><span class="cue-wide">Click through video from the jobs</span><span class="cue-narrow">Swipe through video from the jobs</span></p>
       <div class="reels-row">
         <button class="reel-nav reel-prev" type="button" aria-label="Previous videos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
         <div class="reels-view"><div class="reels-track">
         <figure class="reel">
           <div class="reel-media">
             <video src="assets/reel-interior.mp4" poster="assets/reel-interior-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of a finished interior remodel"></video>
-            <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
           </div>
           <figcaption><b>Interior Remodel</b><span>New flooring, trim and paint</span></figcaption>
         </figure>
         <figure class="reel">
           <div class="reel-media">
             <video src="assets/reel-bath.mp4" poster="assets/reel-bath-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of a remodeled bathroom with a tiled shower"></video>
-            <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
           </div>
           <figcaption><b>Tile Shower</b><span>Full bathroom remodel</span></figcaption>
         </figure>
         <figure class="reel">
           <div class="reel-media">
             <video src="assets/reel-kitchen.mp4" poster="assets/reel-kitchen-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of a finished kitchen remodel"></video>
-            <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
           </div>
           <figcaption><b>Kitchen Remodel</b><span>Cabinets, quartz and backsplash</span></figcaption>
         </figure>
         <figure class="reel">
           <div class="reel-media">
             <video src="assets/reel-porch.mp4" poster="assets/reel-porch-poster.jpg" muted loop playsinline preload="none" aria-label="Covered porch on a finished waterfront remodel"></video>
-            <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
           </div>
           <figcaption><b>Covered Porch</b><span>Waterfront remodel</span></figcaption>
         </figure>
         <figure class="reel">
           <div class="reel-media">
             <video src="assets/reel-framing.mp4" poster="assets/reel-framing-poster.jpg" muted loop playsinline preload="none" aria-label="Crew nailing off ceiling framing"></video>
-            <button class="reel-mute" type="button" aria-label="Turn sound on"><svg class="ic-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg><svg class="ic-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
           </div>
           <figcaption><b>Framing Day</b><span>Joists and rafters going up</span></figcaption>
         </figure>
@@ -1769,13 +1751,6 @@
     slides.forEach(function(fig){
       var v = fig.querySelector('video');
       io.observe(v);
-      var btn = fig.querySelector('.reel-mute');
-      btn.addEventListener('click', function(){
-        v.muted = !v.muted;
-        btn.classList.toggle('is-on', !v.muted);
-        btn.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off');
-        if (!v.muted) v.play().catch(function(){});
-      });
     });
 
     var t;
