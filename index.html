@@ -70,8 +70,8 @@
     --white:#ffffff;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--body);background:var(--paper);color:var(--ink-soft);font-size:16.2px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth;overflow-x:clip;overscroll-behavior-x:none}
+  body{overflow-x:clip;overscroll-behavior-x:none;max-width:100%;font-family:var(--body);background:var(--paper);color:var(--ink-soft);font-size:16.2px;line-height:1.62;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
@@ -150,8 +150,8 @@
     .hero .proof-row{display:none}
     .kicker{display:inline;font-size:.62rem;letter-spacing:.08em;line-height:2}
     .kicker .tx-star{display:none}
-    .kicker::before{content:"— "}
-    .kicker::after{content:" —"}
+    .kicker::before{content:"\2014\A0"}
+    .kicker::after{content:"\A0\2014"}
   }
 
   /* ---------- hero quote wizard ---------- */
@@ -201,7 +201,7 @@
   .wiz-reach label{display:flex;align-items:center;gap:5px;cursor:pointer;color:var(--cream)}
   .wiz-reach input{accent-color:var(--green)}
   .wiz-note{margin-top:11px;text-align:center;color:var(--text-soft);font-size:.78rem;line-height:1.5}
-  .wiz-hp{position:absolute;left:-9999px}
+  .wiz-hp{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
   @media(max-width:1080px){
     .hero-grid{gap:34px}
     .hero-wiz{flex:0 1 380px}

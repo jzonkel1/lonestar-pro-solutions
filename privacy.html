@@ -31,8 +31,8 @@
     --white:#ffffff;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--body);background:var(--paper);color:var(--ink-soft);font-size:16.2px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth;overflow-x:clip;overscroll-behavior-x:none}
+  body{overflow-x:clip;overscroll-behavior-x:none;max-width:100%;font-family:var(--body);background:var(--paper);color:var(--ink-soft);font-size:16.2px;line-height:1.62;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
@@ -102,8 +102,8 @@
     .hero .proof-row{display:none}
     .kicker{display:inline;font-size:.62rem;letter-spacing:.08em;line-height:2}
     .kicker .tx-star{display:none}
-    .kicker::before{content:"— "}
-    .kicker::after{content:" —"}
+    .kicker::before{content:"\2014\A0"}
+    .kicker::after{content:"\A0\2014"}
   }
 
   /* ---------- trust bar ---------- */
