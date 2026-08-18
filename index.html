@@ -337,11 +337,14 @@
     background:var(--paper);border:1px solid var(--line);color:var(--ink);font-size:.83rem;font-weight:700}
   .stage-cue svg{width:19px;height:19px;fill:none;stroke:var(--green-deep);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
     animation:cueTap 2.4s ease-in-out infinite}
+  .cue-narrow{display:none}
+  @media(hover:none) and (pointer:coarse){.cue-wide{display:none}.cue-narrow{display:inline}}
   @keyframes cueTap{0%,72%,100%{transform:translateX(0)}80%{transform:translateX(5px)}88%{transform:translateX(1px)}}
   .stage-view{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
     box-shadow:0 22px 48px -26px rgba(var(--shadow-rgb),.5);height:clamp(300px,34vw,470px);background:var(--sand);
     cursor:pointer;touch-action:pan-y}
-  .stage-shot{position:absolute;inset:0;opacity:0;transition:opacity .45s ease}
+  .stage-shot{position:absolute;inset:0;opacity:0;transition:opacity .45s ease,transform .3s ease}
+  .stage-view.is-dragging .stage-shot{transition:opacity .45s ease}
   .stage-shot.is-on{opacity:1}
   .stage-shot img{width:100%;height:100%;object-fit:cover}
   .stage-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;display:flex;align-items:center;justify-content:center;
@@ -874,7 +877,7 @@
     <div class="stage rv" id="stage">
       <div class="stage-cue">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V6a2 2 0 0 1 4 0v5"/><path d="M13 11V7.5a2 2 0 0 1 4 0V11"/><path d="M17 11.5V9a2 2 0 0 1 4 0v6a6 6 0 0 1-6 6h-2a7 7 0 0 1-7-7v-1a2 2 0 0 1 4 0"/></svg>
-        <span>Tap through the build &mdash; framing to finished</span>
+        <span class="cue-wide">Tap through the build &mdash; framing to finished</span><span class="cue-narrow">Swipe through the build &mdash; framing to finished</span>
       </div>
 
       <div class="stage-view">
@@ -1289,20 +1292,53 @@
   next.addEventListener('click', function(e){ e.stopPropagation(); show(at + 1); });
   steps.forEach(function(s){ s.addEventListener('click', function(){ show(+s.dataset.i); }); });
 
-  // tapping the photo itself advances, and wraps at the end
-  root.querySelector('.stage-view').addEventListener('click', function(){
+  var view = root.querySelector('.stage-view');
+
+  // tapping the photo advances and wraps at the end
+  view.addEventListener('click', function(){
+    if (swiped) { swiped = false; return; }   // a swipe already handled this gesture
     show(at === shots.length - 1 ? 0 : at + 1);
   });
 
-  // swipe on touch
-  var x0 = null;
-  var view = root.querySelector('.stage-view');
-  view.addEventListener('touchstart', function(e){ x0 = e.changedTouches[0].clientX; }, {passive:true});
-  view.addEventListener('touchend', function(e){
+  // ---- swipe ----
+  var x0 = null, y0 = null, swiped = false;
+
+  view.addEventListener('touchstart', function(e){
+    var t = e.changedTouches[0];
+    x0 = t.clientX; y0 = t.clientY; swiped = false;
+    view.classList.add('is-dragging');
+  }, {passive:true});
+
+  view.addEventListener('touchmove', function(e){
     if (x0 === null) return;
-    var dx = e.changedTouches[0].clientX - x0;
-    if (Math.abs(dx) > 45) show(at + (dx < 0 ? 1 : -1));
-    x0 = null;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - x0;
+    // only follow the finger once the gesture is clearly horizontal
+    if (Math.abs(dx) > Math.abs(t.clientY - y0)) {
+      var cur = shots[at];
+      cur.style.transform = 'translateX(' + (dx * 0.28) + 'px)';
+    }
+  }, {passive:true});
+
+  function endSwipe(e){
+    if (x0 === null) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - x0, dy = t.clientY - y0;
+    shots.forEach(function(sh){ sh.style.transform = ''; });
+    view.classList.remove('is-dragging');
+    if (Math.abs(dx) > 38 && Math.abs(dx) > Math.abs(dy)) {
+      swiped = true;
+      var n = at + (dx < 0 ? 1 : -1);
+      show((n + shots.length) % shots.length);   // wrap, same as tapping
+    }
+    x0 = y0 = null;
+  }
+
+  view.addEventListener('touchend', endSwipe, {passive:true});
+  view.addEventListener('touchcancel', function(){
+    shots.forEach(function(sh){ sh.style.transform = ''; });
+    view.classList.remove('is-dragging');
+    x0 = y0 = null;
   }, {passive:true});
 
   show(0);
