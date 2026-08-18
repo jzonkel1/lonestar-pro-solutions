@@ -97,8 +97,8 @@
   @media(max-width:700px){
     .hero{min-height:92svh}
     .hero-bg img{object-position:70% center}
-    .hero-veil{background:linear-gradient(180deg,rgba(var(--paper-rgb),.2) 0%,rgba(var(--paper-rgb),.02) 20%,rgba(var(--paper-rgb),.74) 34%,rgba(var(--paper-rgb),.98) 44%,rgba(var(--paper-rgb),1) 52%)}
-    .hero-inner{margin-inline:auto;text-align:center;padding:calc(36svh + 8px) 0 58px}
+    .hero-veil{background:linear-gradient(180deg,rgba(var(--paper-rgb),.2) 0%,rgba(var(--paper-rgb),.02) 12%,rgba(var(--paper-rgb),.74) 24%,rgba(var(--paper-rgb),.98) 33%,rgba(var(--paper-rgb),1) 41%)}
+    .hero-inner{margin-inline:auto;text-align:center;padding:calc(25svh + 8px) 0 52px}
     .hero-sub{margin-inline:auto}
     .cta-row{justify-content:center}
     .hero .proof-row{display:none}
@@ -382,6 +382,9 @@
     .band-points{max-width:340px;margin-inline:auto}
     /* kicker was rendering at 9.9px */
     .kicker{font-size:.7rem;letter-spacing:.09em}
+    .wide-only{display:none}
+    .hero h1{margin:12px 0 14px}
+    .hero .cta-row{margin-top:24px;gap:11px}
     /* captions were 10.9px */
     .tile figcaption{font-size:.76rem;padding:26px 10px 9px}
     .com-tile figcaption{font-size:.78rem}
@@ -456,7 +459,7 @@
     <div class="hero-inner">
       <span class="kicker rv in"><svg class="tx-star"><use href="#txstar"/></svg>Corpus Christi · Kingsville · Coastal Bend</span>
       <h1 class="extrude rv in rv-d1">Built Right.<br>Down to <span class="green">the Detail.</span></h1>
-      <p class="hero-sub rv in rv-d2">Residential &amp; commercial construction backed by a 100% workmanship guarantee — framing, remodeling, roofing, decks, fencing and drywall. Free estimates on every job.</p>
+      <p class="hero-sub rv in rv-d2">Residential &amp; commercial construction backed by a 100% workmanship guarantee<span class="wide-only"> — framing, remodeling, roofing, decks, fencing and drywall</span>. Free estimates on every job.</p>
       <div class="cta-row rv in rv-d3">
         <a class="btn btn-gold" href="tel:+13617421170">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
