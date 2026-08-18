@@ -108,6 +108,25 @@
     .kicker::after{content:" —"}
   }
 
+  /* ---------- trust bar ---------- */
+  .trust{background:var(--white);border-bottom:1px solid var(--line);padding:34px 0}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .trust-item{display:flex;align-items:flex-start;gap:13px;padding:6px 26px;border-left:1px solid var(--line)}
+  .trust-item:first-child{border-left:0;padding-left:0}
+  .trust-item svg{width:26px;height:26px;flex-shrink:0;stroke:var(--green);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+  .trust-item b{display:block;font-size:.98rem;font-weight:800;color:var(--ink);letter-spacing:-.01em;line-height:1.25}
+  .trust-item span{display:block;margin-top:3px;font-size:.86rem;color:var(--ink-soft);line-height:1.45}
+  @media(max-width:900px){
+    .trust-grid{grid-template-columns:1fr 1fr;gap:22px 0}
+    .trust-item{padding:0 18px}
+    .trust-item:nth-child(odd){border-left:0;padding-left:0}
+  }
+  @media(max-width:560px){
+    .trust{padding:26px 0}
+    .trust-grid{grid-template-columns:1fr;gap:18px}
+    .trust-item{border-left:0;padding:0}
+  }
+
   /* ---------- section shells ---------- */
   .sec-head{max-width:660px;margin-bottom:52px}
   .sec-head.center{margin-inline:auto;text-align:center}
@@ -477,6 +496,29 @@
   </div>
 </section>
 
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item rv">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><b>20 Years in the Trade</b><span>Two decades building across South Texas.</span></div>
+      </div>
+      <div class="trust-item rv rv-d1">
+        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div><b>Our Own 5-Man Crew</b><span>All in-house &mdash; we don't sub your job out.</span></div>
+      </div>
+      <div class="trust-item rv rv-d2">
+        <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><b>100% Workmanship Guarantee</b><span>If our work fails, we come back and fix it.</span></div>
+      </div>
+      <div class="trust-item rv rv-d3">
+        <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6.5a3.5 3.5 0 0 0-3.5-2.5h-3a3 3 0 0 0 0 6h3a3 3 0 0 1 0 6h-3A3.5 3.5 0 0 1 7 13.5"/></svg>
+        <div><b>Free Estimates</b><span>Honest, upfront pricing before work starts.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="services" id="services">
   <div class="wrap">
     <div class="sec-head center rv">
@@ -530,17 +572,26 @@
       <div class="svc rv">
         <div class="svc-photo"><img src="assets/gravel-driveway.jpg" alt="New gravel driveway" loading="lazy"></div>
         <div class="svc-body">
-          <h3>Gravel Driveways</h3>
-          <p>New gravel driveways and driveway repair across the Coastal Bend.</p>
+          <h3>Concrete &amp; Driveways</h3>
+          <p>New and repaired driveways &mdash; gravel and concrete.</p>
+        </div>
+      </div>
+      <div class="svc rv rv-d1">
+        <div class="svc-photo"><img src="assets/porch-red.jpg" alt="Freshly painted porch gable" loading="lazy" style="object-position:center 38%"></div>
+        <div class="svc-body">
+          <h3>Painting</h3>
+          <p>Interior and exterior painting for homes and commercial buildings.</p>
+        </div>
+      </div>
+      <div class="svc rv rv-d2">
+        <div class="svc-photo"><img src="assets/commercial-framing-night.jpg" alt="Commercial framing package going up after dark" loading="lazy"></div>
+        <div class="svc-body">
+          <h3>Commercial Build-Outs</h3>
+          <p>Ground-up commercial shells, storefronts and finish-outs.</p>
         </div>
       </div>
     </div>
-    <p class="more-strip rv">Also ask about
-      <span class="mini"><svg><use href="#txstar"/></svg>Landscaping</span>
-      <span class="mini"><svg><use href="#txstar"/></svg>Exterior Paint</span>
-      
-      — one call covers it all.
-    </p>
+    
   </div>
 </section>
 
@@ -580,10 +631,10 @@
     <div class="feat-head">
       <div class="feat-intro rv">
         <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Featured Project</span>
-        <h2>Storefront Build-Out</h2>
+        <h2>HTeaO &mdash; Kingsville</h2>
       </div>
       <div class="feat-copy rv rv-d1">
-        <p class="sec-sub">A commercial storefront our crew documented from bare framing through the finished building &mdash; structural package, exterior waterproofing, facade panels and finish-out.</p>
+        <p class="sec-sub">The build Freddie names as the one he's proudest of &mdash; a ground-up commercial tea shop on the Kingsville highway, taken from bare framing through sheathing, waterproofing, facade and a finished storefront.</p>
         <div class="feat-scope">
           <span class="scope">Commercial Framing</span>
           <span class="scope">Exterior Waterproofing</span>
@@ -594,21 +645,21 @@
     </div>
     <div class="feat-grid">
       <figure class="feat-lead rv">
-        <img src="assets/hteao-storefront.jpg" alt="Completed commercial storefront built by Lonestar Pro Solutions" loading="lazy">
-        <figcaption>Finished Storefront</figcaption>
+        <img src="assets/hteao-finished.jpg" alt="Finished HTeaO storefront in Kingsville built by Lonestar Pro Solutions" loading="lazy">
+        <figcaption>Finished &middot; Kingsville</figcaption>
       </figure>
       <div class="feat-side">
         <figure class="feat-tile rv rv-d1">
-          <img src="assets/commercial-framing-night.jpg" alt="Commercial framing package going up after dark" loading="lazy">
+          <img src="assets/hteao-framing.jpg" alt="HTeaO framing shell going up" loading="lazy">
           <figcaption>Framing Package</figcaption>
         </figure>
         <figure class="feat-tile rv rv-d2">
-          <img src="assets/facade-install.jpg" alt="Wood-look facade panel installation on the storefront" loading="lazy" style="object-position:center 40%">
-          <figcaption>Facade Install</figcaption>
+          <img src="assets/hteao-wrap.jpg" alt="Sheathing and exterior waterproofing on the HTeaO build" loading="lazy">
+          <figcaption>Sheathing &amp; Wrap</figcaption>
         </figure>
         <figure class="feat-tile rv rv-d3">
-          <img src="assets/commercial-waterproof.jpg" alt="Exterior waterproofing on the commercial build" loading="lazy">
-          <figcaption>Waterproofing</figcaption>
+          <img src="assets/hteao-day.jpg" alt="HTeaO storefront complete and open" loading="lazy">
+          <figcaption>Doors Open</figcaption>
         </figure>
       </div>
     </div>
