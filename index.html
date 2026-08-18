@@ -79,6 +79,9 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;overflow-x:clip;overscroll-behavior-x:none}
+  /* the page itself never pans sideways; pinch-zoom stays available, and the
+     carousels read their own touch events regardless of this */
+  body{touch-action:pan-y pinch-zoom}
   body{overflow-x:clip;overscroll-behavior-x:none;max-width:100%;font-family:var(--body);background:var(--paper);color:var(--ink-soft);font-size:16.2px;line-height:1.62;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
