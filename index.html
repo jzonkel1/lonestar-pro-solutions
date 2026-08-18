@@ -386,7 +386,7 @@
   .reels-hint{text-align:center;font-size:.82rem;color:var(--ink-soft);margin-bottom:16px}
   .reels.on-dark .reels-hint{color:var(--text-soft)}
   .reels-row{display:flex;align-items:center;gap:12px}
-  .reels-view{overflow:hidden;flex:1 1 auto;min-width:0}
+  .reels-view{overflow:hidden;flex:1 1 auto;min-width:0;touch-action:pan-y;-webkit-user-select:none;user-select:none}
   .reels-track{display:flex;gap:var(--rgap);transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
   .reel{flex:0 0 auto;min-width:0;margin:0}
   .reel-media{position:relative;border-radius:16px;overflow:hidden;background:#000;
@@ -498,10 +498,16 @@
     /* two-up instead of a four-high stack, same as the featured-project pills */
     .about-chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:430px;margin-inline:auto}
     .about-chips .chip{justify-content:center;text-align:center;font-size:.78rem;padding:10px 8px;line-height:1.25}
-    /* full-bleed so it actually reads big on a phone */
-    .about-photo{flex:none;width:100vw;margin-inline:calc(50% - 50vw);
-      border-radius:0;border-left:0;border-right:0;box-shadow:none}
-    .about-photo img{max-height:none;aspect-ratio:4/5;height:auto;object-fit:cover;object-position:center 38%}
+    /* full-bleed so it actually reads big on a phone, dissolving out of the
+       sand at the top (that part of the frame is just overcast sky) and
+       running flush into the next section at the bottom */
+    .about{padding-bottom:0}
+    .about-flex{gap:22px}
+    .about-photo{flex:none;width:100vw;margin-inline:calc(50% - 50vw);margin-bottom:0;
+      border:0;border-radius:0;box-shadow:none;
+      -webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.5) 10%,#000 30%);
+      mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.5) 10%,#000 30%)}
+    .about-photo img{max-height:none;aspect-ratio:3/4;height:auto;object-fit:cover;object-position:center 46%}
   }
 
   .about .chip{background:var(--white);border-color:var(--line);color:var(--ink);backdrop-filter:none;box-shadow:0 7px 18px -12px rgba(var(--shadow-rgb),.5)}
@@ -680,6 +686,7 @@
     /* one rhythm everywhere: 56 top / 60 bottom = a consistent 116px between sections
        (was an inconsistent 120-145px) */
     .services,.work,.area,.feature,.about,.commercial,.contact{padding:56px 0 60px}
+    .about{padding-bottom:0}
     .band{padding:46px 0}
     /* photo gaps were 20 / 10 / 16 / 14 depending on the section - unify */
     .svc-grid,.work-grid,.feat-grid,.feat-side{gap:14px}
@@ -1689,18 +1696,59 @@
     prev.addEventListener('click', function(){ go(page - 1); });
     next.addEventListener('click', function(){ go(page + 1); });
 
-    // swipe
-    var x0 = null, y0 = null;
+    // drag-to-swipe: the track tracks the finger, like a reels feed
+    var x0 = null, y0 = null, t0 = 0, axis = null, dragging = false;
+
+    function pageWidth(){
+      var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      return view.getBoundingClientRect().width + gap;
+    }
+    function place(px){
+      track.style.transform = 'translateX(' + (-page * pageWidth() + px) + 'px)';
+    }
+
     view.addEventListener('touchstart', function(e){
-      var t = e.changedTouches[0]; x0 = t.clientX; y0 = t.clientY;
+      if (e.touches.length > 1) return;
+      var t = e.touches[0];
+      x0 = t.clientX; y0 = t.clientY; t0 = e.timeStamp; axis = null; dragging = false;
     }, {passive:true});
-    view.addEventListener('touchend', function(e){
+
+    view.addEventListener('touchmove', function(e){
+      if (x0 === null || e.touches.length > 1) return;
+      var t = e.touches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+      if (axis === null) {
+        if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+        axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+        if (axis === 'x') {
+          dragging = true;
+          track.style.transition = 'none';
+        }
+      }
+      if (axis !== 'x') return;
+      var last = pages() - 1;
+      // resist past the first and last page
+      if ((page === 0 && dx > 0) || (page === last && dx < 0)) dx *= 0.32;
+      place(dx);
+    }, {passive:true});
+
+    function release(e){
       if (x0 === null) return;
-      var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
-      if (Math.abs(dx) > 38 && Math.abs(dx) > Math.abs(dy)) go(page + (dx < 0 ? 1 : -1));
-      x0 = y0 = null;
+      track.style.transition = '';
+      if (dragging) {
+        var t = e.changedTouches[0], dx = t.clientX - x0;
+        var speed = Math.abs(dx) / Math.max(16, e.timeStamp - t0);  // px per ms
+        var far = Math.abs(dx) > pageWidth() * 0.22;
+        var flick = speed > 0.35 && Math.abs(dx) > 30;
+        if (far || flick) { go(page + (dx < 0 ? 1 : -1)); } else { render(); }
+      }
+      x0 = y0 = null; axis = null; dragging = false;
+    }
+    view.addEventListener('touchend', release, {passive:true});
+    view.addEventListener('touchcancel', function(e){
+      track.style.transition = '';
+      if (dragging) render();
+      x0 = y0 = null; axis = null; dragging = false;
     }, {passive:true});
-    view.addEventListener('touchcancel', function(){ x0 = y0 = null; });
 
     // play only what is actually on screen
     var io = new IntersectionObserver(function(entries){
