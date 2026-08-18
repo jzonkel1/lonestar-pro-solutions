@@ -27,7 +27,6 @@
 <meta name="twitter:description" content="Residential &amp; commercial construction in the Coastal Bend since 2011, backed by a 100% workmanship guarantee for 60 days. Framing, remodeling, roofing, decks, fencing and drywall. Serving Corpus Christi, Kingsville &amp; the Coastal Bend. Call (361) 742-1170.">
 <meta name="twitter:image" content="https://jzonkel1.github.io/lonestar-pro-solutions/assets/og-image.jpg">
 <link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -568,7 +567,8 @@
   .band-watermark{position:absolute;right:-64px;top:50%;transform:translateY(-50%);width:330px;height:330px;fill:rgba(255,255,255,.075);pointer-events:none}
   .band-flex{display:flex;align-items:center;gap:44px;flex-wrap:wrap}
   .band-quote{flex:1 1 400px;display:flex;gap:22px;align-items:flex-start;position:relative}
-  .band-quote .tx-star{width:68px;height:68px;flex-shrink:0;fill:var(--band-star);margin:2px 0 0}
+  .band-quote .star-3d{width:78px;height:auto;flex-shrink:0;margin:-2px 0 0;
+    filter:drop-shadow(0 8px 16px rgba(0,0,0,.35))}
   .band-quote p{font-family:var(--display);font-weight:800;font-style:italic;font-size:clamp(1.45rem,2.5vw,2.1rem);line-height:1.14;color:var(--band-head);text-transform:uppercase;letter-spacing:-.005em}
   .band-points{flex:1 1 340px;display:grid;gap:14px}
   .band .bp svg{stroke:var(--band-star)}
@@ -742,7 +742,7 @@
     footer{padding-bottom:104px}
     .band-watermark{width:230px;height:230px;right:-78px}
     .band-quote{flex-direction:column;align-items:center;text-align:center;gap:14px}
-    .band-quote .tx-star{width:76px;height:76px}
+    .band-quote .star-3d{width:86px}
     .sec-head{margin-bottom:30px}
 
     /* centre every section head on mobile, not just services + work */
@@ -1208,7 +1208,7 @@
   <svg class="band-watermark" aria-hidden="true" viewBox="0 0 24 24"><use href="#txstar"/></svg>
   <div class="wrap band-flex">
     <div class="band-quote rv">
-      <svg class="tx-star"><use href="#txstar"/></svg>
+      <img class="star-3d" src="assets/star-3d.png" alt="" width="512" height="478" loading="lazy">
       <p>"Every job is planned out to the detail."</p>
     </div>
     <div class="band-points rv rv-d1">
