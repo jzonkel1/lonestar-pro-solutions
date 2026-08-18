@@ -78,6 +78,14 @@
   .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center center;animation:heroZoom 28s ease-out forwards}
   @keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.14)}}
   .hero-veil{position:absolute;inset:0;background:linear-gradient(100deg,rgba(var(--veil),.9) 0%,rgba(var(--veil),.78) 30%,rgba(var(--veil),.48) 55%,rgba(var(--veil),.2) 76%,rgba(var(--veil),.08) 100%),linear-gradient(180deg,rgba(var(--veil),.34) 0%,transparent 28%,transparent 68%,rgba(var(--veil),.55) 100%)}
+  .hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:130px;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,
+      rgba(var(--paper-rgb),0) 0%,
+      rgba(var(--paper-rgb),.06) 34%,
+      rgba(var(--paper-rgb),.2) 58%,
+      rgba(var(--paper-rgb),.46) 76%,
+      rgba(var(--paper-rgb),.78) 90%,
+      rgba(var(--paper-rgb),.97) 100%)}
   .hero-inner{position:relative;z-index:2;padding:100px 0 110px;max-width:680px}
   .kicker{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:.78rem;letter-spacing:.28em;color:var(--kick-dark);text-transform:uppercase}
   .kicker .tx-star{width:14px;height:14px;fill:var(--kick-dark);flex-shrink:0}
@@ -98,6 +106,7 @@
     .hero{min-height:0}
     .hero-bg img{object-position:70% center}
     .hero-veil{background:linear-gradient(180deg,rgba(var(--veil),.6) 0%,rgba(var(--veil),.46) 22%,rgba(var(--veil),.7) 54%,rgba(var(--veil),.82) 78%,rgba(var(--veil),.88) 100%)}
+    .hero::after{height:92px}
     .hero-inner{margin-inline:auto;text-align:center;padding:13svh 0 9svh}
     .hero-sub{margin-inline:auto}
     .cta-row{justify-content:center}
@@ -109,7 +118,7 @@
   }
 
   /* ---------- trust bar ---------- */
-  .trust{background:var(--white);border-bottom:1px solid var(--line);padding:34px 0}
+  .trust{background:var(--paper);border-bottom:1px solid var(--line);padding:34px 0}
   .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
   .trust-item{display:flex;align-items:flex-start;gap:13px;padding:6px 26px;border-left:1px solid var(--line)}
   .trust-item:first-child{border-left:0;padding-left:0}
@@ -117,14 +126,17 @@
   .trust-item b{display:block;font-size:.98rem;font-weight:800;color:var(--ink);letter-spacing:-.01em;line-height:1.25}
   .trust-item span{display:block;margin-top:3px;font-size:.86rem;color:var(--ink-soft);line-height:1.45}
   @media(max-width:900px){
-    .trust-grid{grid-template-columns:1fr 1fr;gap:22px 0}
-    .trust-item{padding:0 18px}
-    .trust-item:nth-child(odd){border-left:0;padding-left:0}
+    .trust{padding:26px 0 30px}
+    .trust-grid{grid-template-columns:1fr 1fr;gap:12px}
+    .trust-item{display:block;text-align:center;border-left:0;padding:18px 12px 16px;
+      background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+    .trust-item svg{width:24px;height:24px;margin:0 auto 10px;display:block;stroke-width:1.7}
+    .trust-item b{font-size:.9rem;line-height:1.3;text-wrap:balance}
+    .trust-item span{display:none}
   }
-  @media(max-width:560px){
-    .trust{padding:26px 0}
-    .trust-grid{grid-template-columns:1fr;gap:18px}
-    .trust-item{border-left:0;padding:0}
+  @media(max-width:380px){
+    .trust-item{padding:16px 8px 14px}
+    .trust-item b{font-size:.84rem}
   }
 
   /* ---------- section shells ---------- */
@@ -469,7 +481,7 @@
       Text Us a Photo
     </a>
   </div>
-  <p class="mn-foot">Driscoll, TX &middot; Serving the Coastal Bend</p>
+  <p class="mn-foot">Robstown, TX &middot; Serving the Coastal Bend</p>
 </div>
 
 <section class="hero" id="top">
@@ -505,15 +517,15 @@
     <div class="trust-grid">
       <div class="trust-item rv">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <div><b>20 Years in the Trade</b><span>Two decades building across South Texas.</span></div>
+        <div><b>20 Years<br>in the Trade</b><span>Two decades building across South Texas.</span></div>
       </div>
       <div class="trust-item rv rv-d1">
         <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <div><b>Our Own 5-Man Crew</b><span>All in-house &mdash; we don't sub your job out.</span></div>
+        <div><b>Our Own<br>5-Man Crew</b><span>All in-house &mdash; we don't sub your job out.</span></div>
       </div>
       <div class="trust-item rv rv-d2">
         <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-        <div><b>100% Workmanship Guarantee</b><span>If our work fails, we come back and fix it.</span></div>
+        <div><b>100% Workmanship<br>Guarantee</b><span>If our work fails, we come back and fix it.</span></div>
       </div>
       <div class="trust-item rv rv-d3">
         <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6.5a3.5 3.5 0 0 0-3.5-2.5h-3a3 3 0 0 0 0 6h3a3 3 0 0 1 0 6h-3A3.5 3.5 0 0 1 7 13.5"/></svg>
@@ -681,8 +693,8 @@
   <div class="wrap about-flex">
     <div class="about-copy rv">
       <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Who You're Hiring</span>
-      <h2 class="extrude">Family-Run. Coastal Bend Proud.</h2>
-      <p class="sec-sub">Lonestar Pro Solutions is a family-run construction outfit based in Driscoll, Texas. When you call, you're talking to the crew that shows up — not a call center. Straight answers, a clear plan and a free estimate before any work begins.</p>
+      <h2 class="extrude">Our Own Crew. Coastal Bend Proud.</h2>
+      <p class="sec-sub">Lonestar Pro Solutions is a Robstown-based construction outfit running its own five-man crew. When you call, you're talking to the crew that shows up — not a call center. Straight answers, a clear plan and a free estimate before any work begins.</p>
       <div class="about-chips">
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>Se Habla Español</span>
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Local to the Coastal Bend</span>
@@ -712,7 +724,7 @@
       </div>
       <div class="bp">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-        <div><b>Local &amp; Family-Run</b><span>Serving Corpus Christi, Kingsville and surrounding areas.</span></div>
+        <div><b>Local, With Our Own Crew</b><span>Serving Corpus Christi, Kingsville and surrounding areas.</span></div>
       </div>
     </div>
   </div>
@@ -746,16 +758,16 @@
       <div class="area-copy rv">
         <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Service Area</span>
         <h2 class="extrude">Proudly Coastal Bend</h2>
-        <p class="sec-sub">Based in Driscoll, working every day across Corpus Christi, Kingsville and the surrounding communities. If you're close, we'll come take a look — the estimate is free.</p>
+        <p class="sec-sub">Based in Robstown, working every day across Corpus Christi, Kingsville and the surrounding communities. If you're close, we'll come take a look — the estimate is free.</p>
         <div class="towns">
           <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Corpus Christi</span>
           <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Kingsville</span>
-          <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Driscoll</span>
+          <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Robstown</span>
           <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Surrounding Areas</span>
         </div>
       </div>
       <div class="area-map rv rv-d1">
-        <iframe title="Lonestar Pro Solutions service area map" src="https://maps.google.com/maps?q=Driscoll,+TX&z=9&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe title="Lonestar Pro Solutions service area map" src="https://maps.google.com/maps?q=Robstown,+TX&z=9&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
@@ -824,7 +836,7 @@
 
       <div class="foot-brand">
         <img src="assets/logo.png" alt="Lonestar Pro Solutions">
-        <p>Family-run residential &amp; commercial construction based in Driscoll, Texas &mdash; serving Corpus Christi, Kingsville and the surrounding Coastal Bend.</p>
+        <p>Residential &amp; commercial construction based in Robstown, Texas &mdash; serving Corpus Christi, Kingsville and the surrounding Coastal Bend.</p>
         <a class="foot-social" href="https://www.facebook.com/profile.php?id=61578606846074" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.5-3.9 3.77-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12"/></svg>
           Follow on Facebook
@@ -865,7 +877,7 @@
         </a><br>
         <a class="foot-link" href="sms:+13617421170">Text us a job photo</a>
         <p>Free estimates on every job.<br>Se habla espa&ntilde;ol.</p>
-        <p>Driscoll, TX</p>
+        <p>Robstown, TX</p>
       </div>
 
     </div>
