@@ -115,7 +115,7 @@
   .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center center;animation:heroZoom 28s ease-out forwards}
   @keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.14)}}
   .hero-veil{position:absolute;inset:0;background:linear-gradient(100deg,rgba(var(--veil),.9) 0%,rgba(var(--veil),.78) 30%,rgba(var(--veil),.48) 55%,rgba(var(--veil),.2) 76%,rgba(var(--veil),.08) 100%),linear-gradient(180deg,rgba(var(--veil),.34) 0%,transparent 28%,transparent 68%,rgba(var(--veil),.55) 100%)}
-  .hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:130px;z-index:1;pointer-events:none;
+  .hero::after{content:'';display:none;position:absolute;left:0;right:0;bottom:0;height:92px;z-index:1;pointer-events:none;
     background:linear-gradient(180deg,
       rgba(var(--paper-rgb),0) 0%,
       rgba(var(--paper-rgb),.06) 34%,
@@ -143,7 +143,7 @@
     .hero{min-height:0}
     .hero-bg img{object-position:70% center}
     .hero-veil{background:linear-gradient(180deg,rgba(var(--veil),.6) 0%,rgba(var(--veil),.46) 22%,rgba(var(--veil),.7) 54%,rgba(var(--veil),.82) 78%,rgba(var(--veil),.88) 100%)}
-    .hero::after{height:92px}
+    .hero::after{display:block}
     .hero-inner{margin-inline:auto;text-align:center;padding:13svh 0 9svh}
     .hero-sub{margin-inline:auto}
     .cta-row{justify-content:center}
@@ -265,7 +265,7 @@
   .about-copy{flex:1 1 460px}
   .about-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;max-width:430px}
   .about-photo{flex:0 1 380px;align-self:center;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 52px -26px rgba(var(--shadow-rgb),.45)}
-  .about-photo img{width:100%;height:auto;display:block}
+  .about-photo img{width:100%;height:auto;max-height:600px;object-fit:cover;object-position:center 30%;display:block}
   @media(max-width:900px){
     .about-flex{flex-direction:column;gap:30px}
     .about-copy{flex:0 0 auto}
@@ -637,7 +637,7 @@
         </div>
       </div>
       <div class="svc rv rv-d2">
-        <div class="svc-photo"><img src="assets/commercial-framing-night.jpg" alt="Commercial framing package going up after dark" loading="lazy"></div>
+        <div class="svc-photo"><img src="assets/commercial-facade.jpg" alt="Lonestar crew installing facade panels on a commercial build-out" loading="lazy"></div>
         <div class="svc-body">
           <h3>Commercial Build-Outs</h3>
           <p>Ground-up commercial shells, storefronts and finish-outs.</p>
@@ -740,7 +740,7 @@
       </div>
     </div>
     <figure class="about-photo rv rv-d1">
-      <img src="assets/pavilion.jpg" alt="Backyard pavilion built by Lonestar Pro Solutions" loading="lazy">
+      <img src="assets/owner-onsite.jpg" alt="Lonestar Pro Solutions on site at a two-storey new build" loading="lazy">
     </figure>
   </div>
 </section>
@@ -777,6 +777,10 @@
       <p class="sec-sub">Real jobs from our crews around the Coastal Bend.</p>
     </div>
     <div class="work-grid">
+      <figure class="tile tall rv"><img src="assets/roof-framing-bay.jpg" alt="Roof framing on a waterfront build" loading="lazy"><figcaption>Roof Framing</figcaption></figure>
+      <figure class="tile rv rv-d1"><img src="assets/addition-framing.jpg" alt="Room addition framed and braced" loading="lazy"><figcaption>Room Addition</figcaption></figure>
+      <figure class="tile rv rv-d2"><img src="assets/commercial-facade-tall.jpg" alt="Crew installing facade panels from scaffolding" loading="lazy"><figcaption>Facade Install</figcaption></figure>
+      <figure class="tile rv rv-d3"><img src="assets/ceiling-framing.jpg" alt="Ceiling joists going in on an interior framing job" loading="lazy"><figcaption>Ceiling Framing</figcaption></figure>
       <figure class="tile tall rv"><img src="assets/frame-truck-bay.jpg" alt="Lonestar truck at a framed bayfront build" loading="lazy"><figcaption>Bayfront Build</figcaption></figure>
       <figure class="tile wide rv rv-d1"><img src="assets/wall-framing-crew.jpg" alt="Crew framing walls on a new build" loading="lazy"><figcaption>Wall Framing</figcaption></figure>
       <figure class="tile rv rv-d2"><img src="assets/deck-framing.jpg" alt="Deck framing in progress" loading="lazy"><figcaption>Deck Build</figcaption></figure>
@@ -786,6 +790,8 @@
       <figure class="tile rv"><img src="assets/gravel-driveway.jpg" alt="New gravel driveway" loading="lazy"><figcaption>Gravel Driveway</figcaption></figure>
       <figure class="tile rv"><img src="assets/kitchen-remodel.jpg" alt="Finished kitchen remodel" loading="lazy"><figcaption>Kitchen Remodel</figcaption></figure>
       <figure class="tile rv rv-d1"><img src="assets/drywall-lift.jpg" alt="Drywall being installed on a ceiling" loading="lazy"><figcaption>Drywall &amp; Texture</figcaption></figure>
+      <figure class="tile rv rv-d1"><img src="assets/shed-finished.jpg" alt="Finished storage shed with metal roof" loading="lazy"><figcaption>Finished Shed</figcaption></figure>
+      <figure class="tile rv rv-d2"><img src="assets/bathroom.jpg" alt="Remodeled bathroom with double vanity" loading="lazy"><figcaption>Bathroom Remodel</figcaption></figure>
       <figure class="tile rv rv-d2"><img src="assets/pavilion.jpg" alt="Backyard pavilion with shingle roof" loading="lazy"><figcaption>Backyard Pavilion</figcaption></figure>
     </div>
   </div>
