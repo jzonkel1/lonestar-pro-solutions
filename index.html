@@ -3,197 +3,399 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lonestar Pro Solutions — Construction & Heavy Haul | Corpus Christi & Kingsville, TX</title>
-<meta name="description" content="Residential & commercial construction with a 100% workmanship guarantee. Remodeling, roofing, drywall, fencing, custom sheds and oilfield hot shot hauling. Serving Corpus Christi, Kingsville & surrounding areas. Call (361) 742-1170.">
+<title>Lonestar Pro Solutions — Residential & Commercial Construction | Corpus Christi & Kingsville, TX</title>
+<meta name="description" content="Residential & commercial construction with a 100% workmanship guarantee. Framing, remodeling, roofing, decks, fencing and drywall. Serving Corpus Christi, Kingsville & the Coastal Bend. Call (361) 742-1170.">
+<link rel="icon" type="image/png" href="assets/logo-square.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600;1,800&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-crew.jpg" media="(min-width: 701px)">
+<link rel="preload" as="image" href="assets/hero-crew.jpg" media="(max-width: 700px)">
 <style>
   :root{
-    --navy-950:#0c121c;
-    --navy-900:#111a29;
-    --navy-800:#182335;
-    --navy-700:#223047;
-    --line:rgba(255,255,255,.09);
-    --amber:#e8912b;
-    --amber-hot:#f5a63e;
-    --amber-deep:#c9741a;
-    --sand:#f3eee4;
-    --sand-deep:#e7dfcd;
-    --ink:#1b2331;
-    --ink-soft:#4c5666;
-    --white-soft:#c9d2e0;
+    --paper:#f5f2ea;  --paper-rgb:245,242,234;
+    --sand:#e9e4d7;
+    --line:#dbd3c1;
+    --cream:#f4f1e8;  --cream-rgb:244,241,232;
+    --ink:#17251c;    --ink-soft:#5b6459;
+    --shadow-rgb:23,37,28;
+    --veil:12,13,12;
+    --dark-1:#11291a; --dark-2:#0c1f12;
+    --text-soft:#b4c3b6; --hero-sub:#dfe7de; --foot-text:#8fa593;
+    --green:#4aa63e; --green-hot:#57bd49; --green-deep:#2e7d28;
+    --acc-rgb:74,166,62; --acc-light:#4aa63e;
+    --btn:#4aa63e; --btn-hot:#57bd49; --btn-rgb:74,166,62; --on-btn:#ffffff;
+    --kick-dark:#c8b48a; --kick-light:#8a7550;
+    --band-1:#2e7d28; --band-2:#4aa63e; --band-head:#ffffff; --band-sub:#eaf5ea; --band-star:#c8b48a;
     --radius:14px;
-    --display:'Big Shoulders Display',sans-serif;
-    --body:'Archivo',sans-serif;
+    --display:'Kanit',sans-serif;
+    --body:'Schibsted Grotesk',sans-serif;
+    --white:#ffffff;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:var(--body);background:var(--navy-950);color:var(--white-soft);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{font-family:var(--body);background:var(--paper);color:var(--ink-soft);font-size:16.2px;line-height:1.62;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  section{scroll-margin-top:84px}
+
+  /* ---------- display type ---------- */
+  h1,h2{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:-.005em;color:var(--ink);text-wrap:balance}
+  .extrude{color:var(--ink);text-shadow:none}
+  .hero .extrude{color:var(--ink);text-shadow:none}
+  .commercial .extrude{color:var(--cream);text-shadow:0 14px 30px rgba(0,0,0,.55)}
 
   /* ---------- header ---------- */
-  header{position:sticky;top:0;z-index:60;background:rgba(12,18,28,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .bar{display:flex;align-items:center;gap:14px;padding:10px 0}
-  .brand{display:flex;align-items:center;gap:12px;min-width:0}
-  .brand img{width:52px;height:52px;object-fit:contain;background:#10171f;border-radius:10px;box-shadow:0 0 0 1px var(--line)}
-  .brand-name{font-family:var(--display);font-weight:800;font-size:1.45rem;letter-spacing:.045em;color:#fff;line-height:1;white-space:nowrap}
-  .brand-name small{display:block;font-family:var(--body);font-weight:600;font-size:.62rem;letter-spacing:.34em;color:var(--amber);margin-top:4px}
-  nav{margin-left:auto;display:flex;gap:26px;font-weight:600;font-size:.86rem;letter-spacing:.04em}
-  nav a{color:var(--white-soft);transition:color .2s}
-  nav a:hover{color:var(--amber-hot)}
-  .call-pill{margin-left:26px;display:inline-flex;align-items:center;gap:9px;background:var(--amber);color:#161006;font-weight:700;font-size:.9rem;padding:11px 20px;border-radius:999px;transition:background .2s,transform .2s}
-  .call-pill:hover{background:var(--amber-hot);transform:translateY(-1px)}
+  header{position:sticky;top:0;z-index:100;background:rgba(var(--paper-rgb),.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:18px;padding-top:13px;padding-bottom:13px}
+  .brand img{height:56px;width:auto;transition:transform .2s}
+  .brand:hover img{transform:scale(1.05)}
+  nav{margin-left:auto;display:flex;gap:28px;font-weight:700;font-size:.87rem;letter-spacing:.06em;text-transform:uppercase}
+  nav a{color:var(--ink);position:relative;transition:color .2s}
+  nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:2px;background:var(--green);transition:right .22s}
+  nav a:hover{color:var(--green-deep)}
+  nav a:hover::after{right:0}
+  .call-pill{margin-left:28px;display:inline-flex;align-items:center;gap:9px;background:var(--btn);color:var(--on-btn);font-weight:800;font-size:.92rem;padding:0 20px;min-height:48px;border-radius:13px;box-shadow:0 5px 14px -7px rgba(var(--acc-rgb),.55);transition:transform .15s,background .2s,box-shadow .2s}
+  .call-pill:hover{background:var(--btn-hot);transform:translateY(-2px);box-shadow:0 10px 22px -9px rgba(var(--acc-rgb),.7)}
   .call-pill svg{width:16px;height:16px}
   @media(max-width:960px){nav{display:none}}
-  @media(max-width:560px){.brand-name{font-size:1.2rem}.call-pill span{display:none}.call-pill{padding:11px 13px;margin-left:auto}}
+  @media(max-width:560px){
+    .bar{gap:11px}
+    .brand img{height:46px}
+    .call-pill{margin-left:auto;padding:0 14px;min-height:48px;font-size:.84rem;gap:7px}
+  }
+  @media(max-width:392px){
+    .bar{gap:9px}
+    .brand img{height:42px}
+    .call-pill span{display:none}
+    .call-pill{padding:0 14px}
+  }
 
   /* ---------- hero ---------- */
   .hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;background:url("assets/hero-framing.jpg") center 30%/cover no-repeat}
-  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,18,28,.82) 0%,rgba(12,18,28,.66) 45%,rgba(12,18,28,.9) 100%)}
-  .hero-inner{position:relative;z-index:2;padding:90px 0 120px;max-width:780px;margin:0 auto;text-align:center}
-  .kicker{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.78rem;letter-spacing:.3em;color:var(--amber-hot);text-transform:uppercase}
-  .kicker .tx-star{width:14px;height:14px;fill:var(--amber-hot)}
-  .hero .kicker::before,.hero .kicker::after,.sec-head.center .kicker::before,.sec-head.center .kicker::after{content:"—";color:var(--amber-hot)}
-  h1{font-family:var(--display);font-weight:800;font-size:clamp(3rem,7.2vw,5.4rem);line-height:.95;color:#fff;text-transform:uppercase;letter-spacing:.012em;margin:18px 0 20px}
-  h1 .amber{color:var(--amber)}
-  .hero-sub{font-size:1.08rem;max-width:560px;margin:0 auto;color:var(--white-soft)}
-  .cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:1rem;padding:16px 30px;border-radius:12px;transition:transform .18s,background .2s,border-color .2s}
+  .hero-bg{position:absolute;inset:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center center;animation:heroZoom 28s ease-out forwards}
+  @keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.14)}}
+  .hero-veil{position:absolute;inset:0;background:linear-gradient(101deg,rgba(var(--paper-rgb),.985) 0%,rgba(var(--paper-rgb),.965) 26%,rgba(var(--paper-rgb),.84) 43%,rgba(var(--paper-rgb),.42) 62%,rgba(var(--paper-rgb),.08) 74%,rgba(var(--paper-rgb),0) 82%),linear-gradient(180deg,rgba(var(--paper-rgb),.5) 0%,transparent 26%,transparent 74%,rgba(var(--paper-rgb),.92) 100%),linear-gradient(to top left,rgba(var(--veil),.3) 0%,rgba(var(--veil),.08) 32%,transparent 55%)}
+  .hero-inner{position:relative;z-index:2;padding:100px 0 110px;max-width:680px}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:.78rem;letter-spacing:.28em;color:var(--kick-light);text-transform:uppercase}
+  .kicker .tx-star{width:14px;height:14px;fill:var(--kick-light);flex-shrink:0}
+  h1{font-size:clamp(2.7rem,5.5vw,4.7rem);line-height:1.02;margin:16px 0 20px}
+  h1 .green{color:var(--green-deep);text-shadow:none}
+  .hero-sub{font-size:1.1rem;max-width:520px;color:var(--ink-soft);font-weight:500}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:1rem;padding:16px 30px;border-radius:11px;transition:transform .15s,background .2s,box-shadow .2s,border-color .2s;letter-spacing:.02em}
   .btn svg{width:18px;height:18px}
-  .btn-amber{background:var(--amber);color:#161006;box-shadow:0 10px 30px -8px rgba(232,145,43,.55)}
-  .btn-amber:hover{background:var(--amber-hot);transform:translateY(-2px)}
-  .btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:#fff}
-  .btn-ghost:hover{border-color:var(--amber);color:var(--amber-hot);transform:translateY(-2px)}
-  .proof-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:38px}
-  .chip{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:rgba(17,26,41,.72)}
-  .chip svg{width:15px;height:15px;stroke:var(--amber-hot)}
-  @media(max-width:640px){
-    .hero{min-height:auto}
-    .hero-inner{padding:70px 0 96px}
-    .hero-bg::after{background:linear-gradient(180deg,rgba(12,18,28,.94) 0%,rgba(12,18,28,.78) 55%,rgba(12,18,28,.92) 100%)}
-    .hero .kicker{display:inline;font-size:.7rem;letter-spacing:.22em;line-height:2}
-    .hero .kicker .tx-star{display:none}
-    .hero .kicker::before{content:"— "}
-    .hero .kicker::after{content:" —"}
+  .btn-gold{background:var(--btn);color:var(--on-btn);box-shadow:0 14px 30px -10px rgba(var(--btn-rgb),.5)}
+  .btn-gold:hover{background:var(--btn-hot);transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid rgba(var(--shadow-rgb),.3);color:var(--ink);background:rgba(255,255,255,.55)}
+  .btn-ghost:hover{border-color:var(--green);color:var(--green-deep);background:rgba(255,255,255,.85);transform:translateY(-2px)}
+  .proof-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+  .chip{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.82);color:var(--ink);backdrop-filter:blur(6px)}
+  .chip svg{width:15px;height:15px;stroke:var(--green-deep)}
+  @media(max-width:700px){
+    .hero{min-height:92svh}
+    .hero-bg img{object-position:70% center}
+    .hero-veil{background:linear-gradient(180deg,rgba(var(--paper-rgb),.2) 0%,rgba(var(--paper-rgb),.02) 20%,rgba(var(--paper-rgb),.74) 34%,rgba(var(--paper-rgb),.98) 44%,rgba(var(--paper-rgb),1) 52%)}
+    .hero-inner{margin-inline:auto;text-align:center;padding:calc(36svh + 8px) 0 58px}
+    .hero-sub{margin-inline:auto}
+    .cta-row{justify-content:center}
+    .hero .proof-row{display:none}
+    .kicker{display:inline;font-size:.62rem;letter-spacing:.08em;line-height:2}
+    .kicker .tx-star{display:none}
+    .kicker::before{content:"— "}
+    .kicker::after{content:" —"}
   }
 
   /* ---------- section shells ---------- */
-  section{position:relative}
-  .sec-head{max-width:640px;margin-bottom:48px}
+  .sec-head{max-width:660px;margin-bottom:52px}
   .sec-head.center{margin-inline:auto;text-align:center}
-  h2{font-family:var(--display);font-weight:800;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1;text-transform:uppercase;letter-spacing:.015em;margin:14px 0 16px}
-  .light h2{color:var(--ink)}
-  .dark h2{color:#fff}
-  .light .sec-sub{color:var(--ink-soft)}
-  .light{background:var(--sand);color:var(--ink)}
-  .light .kicker{color:var(--amber-deep)}
-  .light .kicker .tx-star{fill:var(--amber-deep)}
+  .sec-head .kicker,.about .kicker,.area .kicker,.contact .kicker{color:var(--kick-light)}
+  .commercial .kicker{color:var(--kick-dark)}
+  .sec-head .kicker .tx-star,.about .kicker .tx-star,.area .kicker .tx-star,.contact .kicker .tx-star{fill:var(--kick-light)}
+  .commercial .kicker .tx-star{fill:var(--kick-dark)}
+  .sec-head.center .kicker::before{content:"— "}
+  .sec-head.center .kicker::after{content:" —"}
+  h2{font-size:clamp(2rem,3.7vw,3rem);line-height:1.06;margin:14px 0 16px}
+  .sec-sub{color:var(--ink-soft);font-weight:500;font-size:1.04rem;text-wrap:pretty}
+  .commercial .sec-sub{color:var(--text-soft)}
 
   /* ---------- services ---------- */
-  .services{padding:96px 0 110px;clip-path:polygon(0 0,100% 42px,100% 100%,0 100%);margin-top:-42px}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .svc{background:#fff;border:1px solid #e3dbc9;border-radius:var(--radius);padding:30px 26px;transition:transform .22s,box-shadow .22s;position:relative;overflow:hidden}
-  .svc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--amber);transform:scaleY(0);transform-origin:top;transition:transform .25s}
-  .svc:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(27,35,49,.28)}
-  .svc:hover::before{transform:scaleY(1)}
-  .svc-icon{width:48px;height:48px;border-radius:11px;background:var(--navy-900);display:grid;place-items:center;margin-bottom:18px}
-  .svc-icon svg{width:23px;height:23px;stroke:var(--amber-hot)}
-  .svc h3{font-family:var(--display);font-weight:700;font-size:1.42rem;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
-  .svc p{font-size:.94rem;color:var(--ink-soft)}
-  @media(max-width:920px){.svc-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
+  .services{background:var(--paper);padding:100px 0 108px}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc:last-child:nth-child(3n+1){grid-column:2}
+  .svc{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s;box-shadow:0 14px 32px -22px rgba(var(--shadow-rgb),.35)}
+  .svc:hover{transform:translateY(-5px);border-color:rgba(var(--acc-rgb),.55);box-shadow:0 24px 46px -22px rgba(var(--shadow-rgb),.42)}
+  .svc-photo{aspect-ratio:16/9.5;overflow:hidden}
+  .svc-photo img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+  .svc:hover .svc-photo img{transform:scale(1.06)}
+  .svc-body{padding:22px 22px 24px}
+  .svc h3{font-family:var(--display);font-weight:800;font-style:italic;text-wrap:balance;font-size:1.24rem;letter-spacing:0;text-transform:uppercase;color:var(--ink);margin-bottom:7px}
+  .svc p{font-size:.95rem;color:var(--ink-soft);font-weight:500}
+  .more-strip{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;text-align:center;font-weight:600;color:var(--ink-soft)}
+  .more-strip .mini{display:inline-flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:.85rem;font-weight:700;color:var(--ink)}
+  .more-strip .mini svg{width:13px;height:13px;fill:var(--kick-light)}
+  @media(max-width:920px){.svc-grid{grid-template-columns:1fr 1fr}.svc:last-child:nth-child(3n+1){grid-column:auto}.svc:last-child:nth-child(2n+1){grid-column:1/-1}}
+  @media(max-width:600px){.svc-grid{grid-template-columns:1fr}.svc:last-child:nth-child(2n+1){grid-column:auto}}
+
+  /* ---------- commercial ---------- */
+  .commercial{background:var(--dark-1);color:var(--text-soft);padding:106px 0}
+  .com-flex{display:flex;align-items:center;gap:54px}
+  .com-copy{flex:1 1 470px}
+  .com-points{display:grid;gap:14px;margin:26px 0 32px}
+  .bp{display:flex;gap:13px;align-items:flex-start}
+  .bp svg{width:20px;height:20px;stroke:var(--kick-dark);flex-shrink:0;margin-top:3px}
+  .bp b{color:var(--cream);display:block;font-size:1rem}
+  .bp span{font-size:.9rem}
+  .com-video{flex:0 1 330px;position:relative}
+  .com-video video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:18px;border:1px solid rgba(var(--cream-rgb),.25);box-shadow:0 34px 70px -24px rgba(0,0,0,.8);background:#000}
+  .com-video .vid-note{position:absolute;left:50%;bottom:-15px;transform:translateX(-50%);background:var(--btn);color:var(--on-btn);border-radius:999px;padding:7px 18px;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 10px 24px -8px rgba(0,0,0,.6)}
+  .com-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:66px}
+  .com-tile{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(var(--cream-rgb),.13);aspect-ratio:16/10.5}
+  .com-tile img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+  .com-tile:hover img{transform:scale(1.05)}
+  .com-tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 11px;background:linear-gradient(180deg,transparent,rgba(var(--veil),.94));font-weight:700;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;color:var(--cream)}
+  @media(max-width:900px){
+    .com-flex{flex-direction:column;gap:34px}
+    .com-copy{flex:0 0 auto}
+    .com-video{flex-basis:auto;width:min(320px,80%)}
+    .com-strip{grid-template-columns:1fr;gap:14px}
+    .com-tile{aspect-ratio:16/9}
+  }
+
+  /* ---------- featured project ---------- */
+  .feature{background:var(--white);padding:100px 0 108px}
+  .feat-head{display:flex;gap:56px;align-items:flex-end;flex-wrap:wrap;margin-bottom:44px}
+  .feat-intro{flex:1.35 1 440px}
+  .feat-copy{flex:1 1 360px}
+  .feat-scope{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+  .scope{display:inline-flex;align-items:center;font-size:.82rem;font-weight:700;letter-spacing:.02em;padding:8px 15px;border-radius:999px;color:var(--ink);background:var(--paper);border:1px solid var(--line)}
+  .feat-grid{display:grid;grid-template-columns:1.7fr 1fr;gap:16px;height:clamp(300px,28vw,400px)}
+  .feat-lead,.feat-tile{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 16px 36px -24px rgba(var(--shadow-rgb),.45)}
+  .feat-lead img,.feat-tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .feat-lead:hover img,.feat-tile:hover img{transform:scale(1.04)}
+  .feat-lead,.feat-side{min-height:0}
+  .feat-side{display:grid;grid-template-rows:repeat(3,1fr);gap:16px}
+  .feat-lead figcaption,.feat-tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 15px 12px;background:linear-gradient(180deg,transparent,rgba(var(--veil),.9));font-weight:700;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;color:var(--cream)}
+  @media(max-width:900px){
+    .feat-head{gap:26px}
+    .feat-grid{grid-template-columns:1fr;height:auto}
+    .feat-lead img{aspect-ratio:16/10}
+    .feat-side{grid-template-rows:none;grid-template-columns:repeat(3,1fr)}
+    .feat-tile img{aspect-ratio:1/1}
+  }
+  @media(max-width:560px){
+    .feat-side{grid-template-columns:1fr;gap:14px}
+    .feat-tile img{aspect-ratio:16/10}
+  }
+
+  /* ---------- about / family-run ---------- */
+  .about{background:var(--sand);padding:104px 0 112px;position:relative;overflow:hidden}
+  .about::before{content:"";position:absolute;inset:0;background:radial-gradient(880px 460px at 90% 14%,rgba(var(--acc-rgb),.10),transparent 62%);pointer-events:none}
+  .about-flex{display:flex;align-items:center;gap:56px;position:relative}
+  .about-copy{flex:1 1 460px}
+  .about-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .about-photo{flex:0 1 380px;align-self:center;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 52px -26px rgba(var(--shadow-rgb),.45)}
+  .about-photo img{width:100%;height:auto;display:block}
+  @media(max-width:900px){
+    .about-flex{flex-direction:column;gap:30px}
+    .about-copy{flex:0 0 auto}
+    .about-copy{text-align:center}
+    .about-chips{justify-content:center}
+    .about-photo{flex:none;width:min(380px,88%)}
+  }
+
+  .about .chip{background:var(--white);border-color:var(--line);color:var(--ink);backdrop-filter:none;box-shadow:0 7px 18px -12px rgba(var(--shadow-rgb),.5)}
+  .about .chip svg{stroke:var(--green)}
 
   /* ---------- guarantee band ---------- */
-  .band{background:var(--navy-900);border-block:1px solid var(--line);padding:58px 0}
-  .band-flex{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
-  .band-quote{flex:1 1 380px}
-  .band-quote .tx-star{width:30px;height:30px;fill:var(--amber);margin-bottom:14px}
-  .band-quote p{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.15;color:#fff;text-transform:uppercase;letter-spacing:.02em}
+  .band{position:relative;overflow:hidden;background:linear-gradient(125deg,var(--band-1),var(--band-2));color:var(--band-sub);padding:66px 0}
+  .band-watermark{position:absolute;right:-64px;top:50%;transform:translateY(-50%);width:330px;height:330px;fill:rgba(255,255,255,.075);pointer-events:none}
+  .band-flex{display:flex;align-items:center;gap:44px;flex-wrap:wrap}
+  .band-quote{flex:1 1 400px;display:flex;gap:22px;align-items:flex-start;position:relative}
+  .band-quote .tx-star{width:68px;height:68px;flex-shrink:0;fill:var(--band-star);margin:2px 0 0}
+  .band-quote p{font-family:var(--display);font-weight:800;font-style:italic;font-size:clamp(1.45rem,2.5vw,2.1rem);line-height:1.14;color:var(--band-head);text-transform:uppercase;letter-spacing:-.005em}
   .band-points{flex:1 1 340px;display:grid;gap:14px}
-  .bp{display:flex;gap:13px;align-items:flex-start}
-  .bp svg{width:20px;height:20px;stroke:var(--amber-hot);flex-shrink:0;margin-top:3px}
-  .bp b{color:#fff;display:block;font-size:.98rem}
-  .bp span{font-size:.88rem}
+  .band .bp svg{stroke:var(--band-star)}
+  .band .bp span{color:var(--band-sub)}
 
   /* ---------- gallery ---------- */
-  .work{padding:96px 0 110px;background:var(--navy-950)}
-  .work-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px}
-  .tile{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--navy-800)}
+  .work{padding:100px 0 108px;background:var(--white)}
+  .work-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:215px;gap:16px;grid-auto-flow:dense}
+  .tile{position:relative;border-radius:12px;overflow:hidden;background:var(--sand);border:1px solid var(--line);transition:transform .2s,border-color .2s,box-shadow .2s}
+  .tile:hover{transform:translateY(-4px);border-color:rgba(var(--acc-rgb),.5);box-shadow:0 18px 36px -20px rgba(var(--shadow-rgb),.45)}
   .tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
   .tile:hover img{transform:scale(1.05)}
-  .tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 13px;background:linear-gradient(180deg,transparent,rgba(12,18,28,.88));font-weight:600;font-size:.83rem;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+  .tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(180deg,transparent,rgba(var(--veil),.92));font-weight:700;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;color:var(--cream)}
   .tall{grid-row:span 2}
   .wide{grid-column:span 2}
-  @media(max-width:900px){.work-grid{grid-template-columns:1fr 1fr;grid-auto-rows:190px}}
-  @media(max-width:540px){.work-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:10px}.tile figcaption{font-size:.7rem;padding:24px 10px 9px}}
+  @media(max-width:900px){.work-grid{grid-template-columns:1fr 1fr;grid-auto-rows:195px}}
+  @media(max-width:540px){.work-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.tile figcaption{font-size:.68rem;padding:24px 9px 8px}}
 
-  /* ---------- heavy haul ---------- */
-  .haul{background:linear-gradient(180deg,var(--navy-900),var(--navy-950));border-block:1px solid var(--line);padding:100px 0}
-  .haul-flex{display:flex;align-items:center;gap:54px}
-  .haul-copy{flex:1 1 460px}
-  .haul-media{flex:1 1 480px;position:relative}
-  .haul-media img{border-radius:var(--radius);box-shadow:0 30px 60px -25px rgba(0,0,0,.7)}
-  .haul-media::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--amber);border-radius:var(--radius);z-index:-1;opacity:.5}
-  .haul-list{display:grid;gap:12px;margin:26px 0 32px}
-  .haul-list .bp b{font-size:1rem}
-  @media(max-width:900px){.haul-flex{flex-direction:column-reverse}.haul-media{width:100%}.haul-media::after{display:none}}
+  /* ---------- lightbox ---------- */
+  .tile{cursor:zoom-in}
+  .tile:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+  .lb{position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;padding:26px;background:rgba(8,10,9,.975);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s}
+  body.lb-open .lb{opacity:1;visibility:visible}
+  .lb-fig{max-width:min(1100px,94vw);max-height:86vh;display:flex;flex-direction:column;gap:14px;align-items:center}
+  .lb-fig img{max-width:100%;max-height:78vh;width:auto;height:auto;border-radius:10px;display:block;box-shadow:0 30px 80px -30px rgba(0,0,0,.9)}
+  .lb-cap{font-weight:700;font-size:.85rem;letter-spacing:.09em;text-transform:uppercase;color:var(--cream);text-align:center}
+  .lb-btn{position:absolute;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border:1px solid rgba(var(--cream-rgb),.28);border-radius:14px;background:rgba(255,255,255,.07);color:var(--cream);cursor:pointer;transition:background .2s,border-color .2s}
+  .lb-btn:hover{background:rgba(255,255,255,.16);border-color:rgba(var(--cream-rgb),.55)}
+  .lb-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .lb-close{top:20px;right:20px}
+  .lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+  .lb-next{right:20px;top:50%;transform:translateY(-50%)}
+  .lb-count{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:.8rem;font-weight:700;letter-spacing:.12em;color:rgba(var(--cream-rgb),.65)}
+  @media(max-width:640px){
+    .lb{padding:14px}
+    .lb-btn{width:46px;height:46px}
+    .lb-prev{left:10px}.lb-next{right:10px}
+    .lb-close{top:12px;right:12px}
+    .lb-fig img{max-height:70vh}
+  }
 
   /* ---------- service area ---------- */
-  .area{padding:96px 0 110px}
+  .area{padding:100px 0 108px;background:var(--paper)}
   .area-flex{display:flex;gap:48px;align-items:stretch;flex-wrap:wrap}
   .area-copy{flex:1 1 380px}
-  .area-map{flex:1 1 440px;min-height:380px;border-radius:var(--radius);overflow:hidden;border:1px solid #ddd3bd;box-shadow:0 22px 50px -24px rgba(27,35,49,.3)}
-  .area-map iframe{width:100%;height:100%;border:0;display:block}
+  .area-map{flex:1 1 440px;min-height:380px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px -26px rgba(var(--shadow-rgb),.4)}
+  .area-map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.92)}
   .towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-  .town{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #e3dbc9;border-radius:999px;padding:9px 16px;font-weight:600;font-size:.88rem;color:var(--ink)}
-  .town svg{width:14px;height:14px;stroke:var(--amber-deep)}
+  .town{display:inline-flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:700;font-size:.88rem;color:var(--ink)}
+  .town svg{width:14px;height:14px;stroke:var(--kick-light)}
 
   /* ---------- contact ---------- */
-  .contact{background:var(--navy-900);padding:100px 0 110px;border-top:1px solid var(--line)}
+  .contact{background:var(--sand);color:var(--ink-soft);padding:104px 0 112px}
   .contact-flex{display:flex;gap:56px;flex-wrap:wrap}
   .contact-copy{flex:1 1 400px}
-  .contact-copy .big-num{display:inline-flex;align-items:center;gap:14px;font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4vw,2.7rem);color:#fff;margin:20px 0 8px;letter-spacing:.02em}
-  .contact-copy .big-num svg{width:28px;height:28px;stroke:var(--amber)}
-  .contact-copy .big-num:hover{color:var(--amber-hot)}
+  .big-num{display:inline-flex;align-items:center;gap:14px;font-family:var(--display);font-weight:800;font-style:italic;font-size:clamp(1.8rem,3.4vw,2.5rem);color:var(--ink);margin:20px 0 8px;letter-spacing:-.005em}
+  .big-num svg{width:28px;height:28px;stroke:var(--green)}
+  .big-num:hover{color:var(--green-deep)}
   .contact-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
-  .quote-card{flex:1 1 420px;background:#fff;border-radius:18px;padding:36px 32px;color:var(--ink);box-shadow:0 30px 70px -30px rgba(0,0,0,.6)}
-  .quote-card h3{font-family:var(--display);font-weight:800;font-size:1.7rem;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
-  .quote-card .qc-sub{font-size:.9rem;color:var(--ink-soft);margin-bottom:22px}
+  .quote-card{flex:1 1 420px;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:36px 32px;color:var(--ink);box-shadow:0 30px 66px -32px rgba(var(--shadow-rgb),.45)}
+  .contact .btn-ghost{border-color:rgba(var(--shadow-rgb),.3);color:var(--ink)}
+  .contact .btn-ghost:hover{border-color:var(--green);color:var(--green-deep)}
+  .quote-card h3{font-family:var(--display);font-weight:800;font-style:italic;font-size:1.5rem;text-transform:uppercase;letter-spacing:-.005em;margin-bottom:6px}
+  .quote-card .qc-sub{font-size:.92rem;color:var(--ink-soft);margin-bottom:22px;font-weight:500}
   .field{margin-bottom:14px}
-  .field label{display:block;font-weight:600;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
-  .field input,.field select,.field textarea{width:100%;font-family:var(--body);font-size:.98rem;padding:13px 14px;border:1.5px solid #d8d2c4;border-radius:10px;background:#faf8f3;color:var(--ink);outline:none;transition:border-color .2s}
-  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--amber)}
+  .field label{display:block;font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+  .field input,.field select,.field textarea{width:100%;font-family:var(--body);font-size:.98rem;font-weight:500;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);outline:none;transition:border-color .2s,box-shadow .15s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(var(--acc-rgb),.25)}
   .field textarea{resize:vertical;min-height:92px}
   .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   @media(max-width:520px){.field-row{grid-template-columns:1fr}}
   .quote-btn{width:100%;border:0;cursor:pointer;font-family:var(--body)}
-  .qc-note{margin-top:14px;font-size:.82rem;color:var(--ink-soft);text-align:center}
+  .qc-note{margin-top:14px;font-size:.84rem;color:var(--ink-soft);text-align:center;font-weight:600}
 
   /* ---------- footer ---------- */
-  footer{background:var(--navy-950);padding:44px 0 120px;border-top:1px solid var(--line)}
-  .foot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:.88rem}
-  .foot img{width:44px;height:44px;object-fit:contain;background:#10171f;border-radius:9px}
-  .foot .fname{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:.04em;color:#fff;text-transform:uppercase}
-  .foot .sep{opacity:.35}
-  .foot a:hover{color:var(--amber-hot)}
-  @media(min-width:769px){footer{padding-bottom:44px}}
+  footer{background:var(--dark-2);padding:66px 0 120px;color:var(--foot-text);font-size:.92rem;border-top:1px solid rgba(var(--cream-rgb),.08)}
+  .foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.05fr;gap:46px;text-align:center;justify-items:center}
+  .foot-brand{display:flex;flex-direction:column;align-items:center}
+  .foot-brand img{height:64px;width:auto;margin-bottom:18px}
+  .foot-brand p{max-width:340px;line-height:1.68}
+  .foot-social{display:inline-flex;align-items:center;gap:9px;margin-top:18px;min-height:44px;font-weight:700;color:var(--cream);transition:color .2s}
+  .foot-social svg{width:17px;height:17px;fill:currentColor}
+  .foot-social:hover{color:var(--green-hot)}
+  .foot-col h4{font-family:var(--body);font-weight:800;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);margin-bottom:14px}
+  .foot-col ul{list-style:none}
+  .foot-col li a,.foot-contact a.foot-link{display:inline-flex;align-items:center;min-height:36px;transition:color .2s}
+  .foot-col li a:hover,.foot-contact a.foot-link:hover{color:var(--green-hot)}
+  .foot-phone{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-style:italic;font-size:1.45rem;letter-spacing:-.005em;color:var(--cream);min-height:44px;transition:color .2s}
+  .foot-phone svg{width:19px;height:19px;stroke:var(--green-hot);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .foot-phone:hover{color:var(--green-hot)}
+  .foot-contact p{margin-top:12px;line-height:1.6}
+  .foot-bottom{margin-top:54px;padding-top:24px;border-top:1px solid rgba(var(--cream-rgb),.1);display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:2px 26px;font-size:.84rem;text-align:center}
+  .foot-bottom a{display:inline-block;padding:13px 3px;color:var(--cream);transition:color .2s}
+  .foot-bottom a:hover{color:var(--green-hot)}
+  @media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:38px}}
+  @media(max-width:560px){
+    .foot-grid{grid-template-columns:1fr;gap:34px}
+    .foot-bottom{flex-direction:column}
+  }
+  @media(min-width:769px){footer{padding-bottom:56px}}
 
   /* ---------- sticky mobile bar ---------- */
-  .mob-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
-  .mob-bar a{display:flex;align-items:center;justify-content:center;gap:9px;padding:16px 10px;font-weight:700;font-size:.95rem}
+  .mob-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;grid-template-columns:1fr 1fr;gap:0;transform:translateY(110%);transition:transform .3s ease}
+  .mob-bar.show{transform:none}
+  .mob-bar a{display:flex;align-items:center;justify-content:center;gap:9px;padding:16px 10px;font-weight:800;font-size:.95rem}
   .mob-bar svg{width:18px;height:18px}
-  .mob-call{background:var(--amber);color:#161006}
-  .mob-text{background:var(--navy-800);color:#fff}
+  .mob-call{background:var(--btn);color:var(--on-btn)}
+  .mob-text{background:var(--dark-1);color:var(--cream)}
   @media(max-width:768px){.mob-bar{display:grid}}
 
   /* ---------- reveal ---------- */
   .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
   .rv.in{opacity:1;transform:none}
   .rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}
+
+  /* ---------- mobile nav ---------- */
+  .nav-toggle{display:none;align-items:center;justify-content:center;width:48px;height:48px;margin-left:0;padding:0;flex-shrink:0;border:1px solid var(--line);border-radius:13px;background:var(--white);cursor:pointer;box-shadow:0 2px 8px -4px rgba(var(--shadow-rgb),.4)}
+  .nav-toggle span{display:block;position:relative;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:background .2s ease}
+  .nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .26s ease}
+  .nav-toggle span::before{top:-6px}
+  .nav-toggle span::after{top:6px}
+  body.nav-open .nav-toggle span{background:transparent}
+  body.nav-open .nav-toggle span::before{transform:translateY(6px) rotate(45deg)}
+  body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
+
+  .mobile-nav{position:fixed;inset:0;z-index:80;background:var(--dark-1);display:flex;flex-direction:column;justify-content:center;padding:96px 26px 40px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .28s ease,transform .28s ease,visibility .28s}
+  body.nav-open .mobile-nav{opacity:1;visibility:visible;transform:none}
+  .mn-link{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:-.005em;font-size:clamp(1.6rem,6.4vw,2.2rem);line-height:1.1;color:var(--cream);padding:15px 0;border-bottom:1px solid rgba(var(--cream-rgb),.12);transition:color .2s}
+  .mn-link:active,.mn-link:focus-visible{color:var(--green-hot)}
+  .mn-actions{display:grid;gap:12px;margin-top:32px}
+  .mn-actions .btn{width:100%}
+  .mobile-nav .btn-ghost{background:transparent;border-color:rgba(var(--cream-rgb),.42);color:var(--cream)}
+  .mobile-nav .btn-ghost:hover,.mobile-nav .btn-ghost:active{background:rgba(var(--cream-rgb),.08);border-color:var(--green-hot);color:var(--green-hot)}
+  .mn-foot{margin-top:24px;text-align:center;font-size:.88rem;font-weight:600;color:var(--text-soft)}
+  @media(max-width:960px){.nav-toggle{display:inline-flex}}
+  @media(min-width:961px){.mobile-nav{display:none}}
+  @media(prefers-reduced-motion:reduce){.mobile-nav{transition:none}.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{transition:none}}
+
+  /* ---------- mobile audit fixes (8/18) ---------- */
+  @media(max-width:700px){
+    /* one rhythm everywhere: 56 top / 60 bottom = a consistent 116px between sections
+       (was an inconsistent 120-145px) */
+    .services,.work,.area,.feature,.about,.commercial,.contact{padding:56px 0 60px}
+    .band{padding:46px 0}
+    /* photo gaps were 20 / 10 / 16 / 14 depending on the section - unify */
+    .svc-grid,.work-grid,.feat-grid,.feat-side{gap:14px}
+    footer{padding-bottom:104px}
+    .band-watermark{width:230px;height:230px;right:-78px}
+    .band-quote{flex-direction:column;align-items:center;text-align:center;gap:14px}
+    .band-quote .tx-star{width:76px;height:76px}
+    .sec-head{margin-bottom:30px}
+
+    /* centre every section head on mobile, not just services + work */
+    .sec-head,.com-copy,.feat-head,.feat-intro,.feat-copy,.area-copy,.contact-copy{text-align:center}
+    .sec-head{margin-inline:auto}
+    .feat-head{align-items:center}
+    .hero-sub,.sec-sub,.contact-copy p,.feat-copy .sec-sub{margin-inline:auto}
+    /* and centre the things that hang off them */
+    .feat-scope,.towns,.contact-actions,.about-chips,.more-strip{justify-content:center}
+    .big-num{justify-content:center}
+    .com-copy .btn,.contact-copy .btn{margin-inline:auto}
+    /* bullet rows stay left-read but the stack itself centres */
+    .com-points{max-width:330px;margin-inline:auto}
+    .com-points .bp,.band-points .bp{text-align:left}
+    .band-points{max-width:340px;margin-inline:auto}
+    /* kicker was rendering at 9.9px */
+    .kicker{font-size:.7rem;letter-spacing:.09em}
+    /* captions were 10.9px */
+    .tile figcaption{font-size:.76rem;padding:26px 10px 9px}
+    .com-tile figcaption{font-size:.78rem}
+    /* tap targets below the 44px minimum */
+    .call-pill{min-height:44px}
+    .qc-note a{display:inline-block;padding:11px 6px}
+    .brand{display:inline-flex;align-items:center;min-height:44px}
+    .foot-col li a,.foot-contact a.foot-link{min-height:44px}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .hero-bg img{animation:none}
+    .rv{opacity:1;transform:none;transition:none}
+  }
 </style>
 </head>
 <body>
@@ -206,14 +408,13 @@
 
 <header>
   <div class="wrap bar">
-    <a class="brand" href="#top">
-      <img src="assets/logo.jpg" alt="Lonestar Pro Solutions logo">
-      <span class="brand-name">Lonestar Pro Solutions<small>CONSTRUCTION · HEAVY HAUL</small></span>
+    <a class="brand" href="#top" aria-label="Lonestar Pro Solutions home">
+      <img src="assets/logo.png" alt="Lonestar Pro Solutions logo">
     </a>
     <nav>
       <a href="#services">Services</a>
+      <a href="#commercial">Commercial</a>
       <a href="#work">Our Work</a>
-      <a href="#haul">Heavy Haul</a>
       <a href="#area">Service Area</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -221,18 +422,43 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
       <span>(361) 742-1170</span>
     </a>
+    <button class="nav-toggle" type="button" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span></span></button>
   </div>
 </header>
 
+<div class="mobile-nav" id="mobileNav">
+  <a class="mn-link" href="#services">Services</a>
+  <a class="mn-link" href="#commercial">Commercial</a>
+  <a class="mn-link" href="#work">Our Work</a>
+  <a class="mn-link" href="#area">Service Area</a>
+  <a class="mn-link" href="#contact">Contact</a>
+  <div class="mn-actions">
+    <a class="btn btn-gold" href="tel:+13617421170">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+      Call (361) 742-1170
+    </a>
+    <a class="btn btn-ghost" href="sms:+13617421170">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>
+      Text Us a Photo
+    </a>
+  </div>
+  <p class="mn-foot">Driscoll, TX &middot; Serving the Coastal Bend</p>
+</div>
+
 <section class="hero" id="top">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <picture>
+      <img src="assets/hero-crew.jpg" alt="Lonestar Pro Solutions crew framing walls on a new build">
+    </picture>
+  </div>
+  <div class="hero-veil"></div>
   <div class="wrap" style="width:100%">
     <div class="hero-inner">
       <span class="kicker rv in"><svg class="tx-star"><use href="#txstar"/></svg>Corpus Christi · Kingsville · Coastal Bend</span>
-      <h1 class="rv in rv-d1">Built Right.<br>Down to <span class="amber">the Detail.</span></h1>
-      <p class="hero-sub rv in rv-d2">Residential &amp; commercial construction backed by a 100% workmanship guarantee — remodeling, roofing, drywall, fencing, custom sheds and outdoor living. Free estimates on every job.</p>
+      <h1 class="extrude rv in rv-d1">Built Right.<br>Down to <span class="green">the Detail.</span></h1>
+      <p class="hero-sub rv in rv-d2">Residential &amp; commercial construction backed by a 100% workmanship guarantee — framing, remodeling, roofing, decks, fencing and drywall. Free estimates on every job.</p>
       <div class="cta-row rv in rv-d3">
-        <a class="btn btn-amber" href="tel:+13617421170">
+        <a class="btn btn-gold" href="tel:+13617421170">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
           Call (361) 742-1170
         </a>
@@ -247,49 +473,163 @@
   </div>
 </section>
 
-<section class="light services" id="services">
+<section class="services" id="services">
   <div class="wrap">
     <div class="sec-head center rv">
       <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>What We Do</span>
-      <h2>One Crew. Every Trade.</h2>
-      <p class="sec-sub">From the studs out — every job planned to the detail and backed by our 100% workmanship guarantee.</p>
+      <h2 class="extrude">One Crew. Every Trade.</h2>
+      <p class="sec-sub">From the slab to the shingles — every job planned to the detail and backed by our 100% workmanship guarantee.</p>
     </div>
     <div class="svc-grid">
       <div class="svc rv">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg></div>
-        <h3>Remodeling</h3>
-        <p>Kitchens, bathrooms, room additions and full-home updates — framed, finished and cleaned up right.</p>
+        <div class="svc-photo"><img src="assets/framing-worker.jpg" alt="Framing crew building a second story" loading="lazy" style="object-position:center 30%"></div>
+        <div class="svc-body">
+          <h3>New Construction &amp; Framing</h3>
+          <p>Ground-up builds, additions and structural framing — homes, garages and commercial shells.</p>
+        </div>
       </div>
       <div class="svc rv rv-d1">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M12 9v6"/><path d="M16 15v6"/><path d="M16 3v6"/><path d="M3 15h18"/><path d="M3 9h18"/><path d="M8 15v6"/><path d="M8 3v6"/></svg></div>
-        <h3>Drywall &amp; Texturing</h3>
-        <p>Wall finish installation, patching, repair and texturing — smooth, matched and paint-ready.</p>
+        <div class="svc-photo"><img src="assets/bathroom.jpg" alt="Remodeled bathroom with double vanity" loading="lazy"></div>
+        <div class="svc-body">
+          <h3>Remodeling &amp; Flooring</h3>
+          <p>Kitchens, bathrooms, flooring and full-home updates — framed, finished and cleaned up right.</p>
+        </div>
       </div>
       <div class="svc rv rv-d2">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
-        <h3>Roofing</h3>
-        <p>Roof repair and replacement built for Coastal Bend sun, wind and storms.</p>
+        <div class="svc-photo"><img src="assets/roof-complete.jpg" alt="New composition shingle roof" loading="lazy"></div>
+        <div class="svc-body">
+          <h3>Roofing</h3>
+          <p>Roof repair and replacement built for Coastal Bend sun, wind and storms.</p>
+        </div>
       </div>
       <div class="svc rv">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3 2 5v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M6 8h4"/><path d="M6 18h4"/><path d="m12 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M14 8h4"/><path d="M14 18h4"/><path d="m20 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/></svg></div>
-        <h3>Fencing</h3>
-        <p>New privacy fences and repairs — straight lines, set posts, built to last.</p>
+        <div class="svc-photo"><img src="assets/pergola-build.jpg" alt="Custom pergola under construction" loading="lazy" style="object-position:center 35%"></div>
+        <div class="svc-body">
+          <h3>Decks, Pergolas &amp; Sheds</h3>
+          <p>Custom decks, patio covers, pergolas and storage sheds — built on your site, your way.</p>
+        </div>
       </div>
       <div class="svc rv rv-d1">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg></div>
-        <h3>Sheds &amp; Outdoor Living</h3>
-        <p>Custom storage sheds, pergolas, patio covers and pavilions — built on your site, your way.</p>
+        <div class="svc-photo"><img src="assets/fence.jpg" alt="New cedar privacy fence" loading="lazy"></div>
+        <div class="svc-body">
+          <h3>Fencing</h3>
+          <p>New privacy fences and repairs — straight lines, set posts, built to last.</p>
+        </div>
       </div>
       <div class="svc rv rv-d2">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5"/></svg></div>
-        <h3>Landscaping &amp; Exterior</h3>
-        <p>Landscaping, exterior paint and touch-ups that finish the job — curb appeal included.</p>
+        <div class="svc-photo"><img src="assets/drywall-lift.jpg" alt="Hanging a ceiling drywall sheet with a panel lift" loading="lazy" style="object-position:center 35%"></div>
+        <div class="svc-body">
+          <h3>Drywall &amp; Texturing</h3>
+          <p>Hang, tape, float and texture — smooth, matched and paint-ready walls.</p>
+        </div>
+      </div>
+      <div class="svc rv">
+        <div class="svc-photo"><img src="assets/gravel-driveway.jpg" alt="New gravel driveway" loading="lazy"></div>
+        <div class="svc-body">
+          <h3>Gravel Driveways</h3>
+          <p>New gravel driveways and driveway repair across the Coastal Bend.</p>
+        </div>
+      </div>
+    </div>
+    <p class="more-strip rv">Also ask about
+      <span class="mini"><svg><use href="#txstar"/></svg>Landscaping</span>
+      <span class="mini"><svg><use href="#txstar"/></svg>Exterior Paint</span>
+      
+      — one call covers it all.
+    </p>
+  </div>
+</section>
+
+<section class="commercial" id="commercial">
+  <div class="wrap">
+    <div class="com-flex">
+      <div class="com-copy rv">
+        <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Commercial Division</span>
+        <h2 class="extrude">Storefronts to Full Framing Packages</h2>
+        <p class="sec-sub">The same crew that frames Coastal Bend homes builds out Coastal Bend businesses — new commercial framing, exterior facades and finish-outs, delivered on schedule.</p>
+        <div class="com-points">
+          <div class="bp"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg><div><b>Commercial Framing</b><span>Full structural packages for new commercial buildings.</span></div></div>
+          <div class="bp"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M4 20V8l8-5 8 5v12"/><path d="M9 20v-8h6v8"/></svg><div><b>Facades &amp; Finish-Outs</b><span>Exterior panel systems, waterproofing and storefront finishes.</span></div></div>
+          <div class="bp"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><b>On Schedule</b><span>Planned to the detail, so your doors open on time.</span></div></div>
+        </div>
+        <a class="btn btn-gold" href="tel:+13617421170">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+          Talk to Us About Your Build
+        </a>
+      </div>
+      <div class="com-video rv rv-d1">
+        <video src="assets/commercial-walkthrough.mp4" poster="assets/walkthrough-poster.jpg" muted loop playsinline preload="none" aria-label="Walkthrough of a completed commercial project"></video>
+        <span class="vid-note">Real Job · Real Crew</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ==========================================================
+     FEATURED PROJECT — SCOPE NOT YET CONFIRMED BY FREDDIE.
+     The four scope chips below describe what his own job photos
+     show (framing / waterproofing / facade panels / finish-out).
+     Confirm the actual scope + the client name before launch.
+     ========================================================== -->
+<section class="feature" id="feature">
+  <div class="wrap">
+    <div class="feat-head">
+      <div class="feat-intro rv">
+        <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Featured Project</span>
+        <h2>Storefront Build-Out</h2>
+      </div>
+      <div class="feat-copy rv rv-d1">
+        <p class="sec-sub">A commercial storefront our crew documented from bare framing through the finished building &mdash; structural package, exterior waterproofing, facade panels and finish-out.</p>
+        <div class="feat-scope">
+          <span class="scope">Commercial Framing</span>
+          <span class="scope">Exterior Waterproofing</span>
+          <span class="scope">Facade Panel Install</span>
+          <span class="scope">Storefront Finish-Out</span>
+        </div>
+      </div>
+    </div>
+    <div class="feat-grid">
+      <figure class="feat-lead rv">
+        <img src="assets/hteao-storefront.jpg" alt="Completed commercial storefront built by Lonestar Pro Solutions" loading="lazy">
+        <figcaption>Finished Storefront</figcaption>
+      </figure>
+      <div class="feat-side">
+        <figure class="feat-tile rv rv-d1">
+          <img src="assets/commercial-framing-night.jpg" alt="Commercial framing package going up after dark" loading="lazy">
+          <figcaption>Framing Package</figcaption>
+        </figure>
+        <figure class="feat-tile rv rv-d2">
+          <img src="assets/facade-install.jpg" alt="Wood-look facade panel installation on the storefront" loading="lazy" style="object-position:center 40%">
+          <figcaption>Facade Install</figcaption>
+        </figure>
+        <figure class="feat-tile rv rv-d3">
+          <img src="assets/commercial-waterproof.jpg" alt="Exterior waterproofing on the commercial build" loading="lazy">
+          <figcaption>Waterproofing</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-flex">
+    <div class="about-copy rv">
+      <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Who You're Hiring</span>
+      <h2 class="extrude">Family-Run. Coastal Bend Proud.</h2>
+      <p class="sec-sub">Lonestar Pro Solutions is a family-run construction outfit based in Driscoll, Texas. When you call, you're talking to the crew that shows up — not a call center. Straight answers, a clear plan and a free estimate before any work begins.</p>
+      <div class="about-chips">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>Se Habla Español</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Local to the Coastal Bend</span>
+      </div>
+    </div>
+    <figure class="about-photo rv rv-d1">
+      <img src="assets/pavilion.jpg" alt="Backyard pavilion built by Lonestar Pro Solutions" loading="lazy">
+    </figure>
+  </div>
+</section>
+
 <section class="band">
+  <svg class="band-watermark" aria-hidden="true" viewBox="0 0 24 24"><use href="#txstar"/></svg>
   <div class="wrap band-flex">
     <div class="band-quote rv">
       <svg class="tx-star"><use href="#txstar"/></svg>
@@ -316,50 +656,29 @@
   <div class="wrap">
     <div class="sec-head center rv">
       <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Recent Work</span>
-      <h2 style="color:#fff">Our Work Speaks First</h2>
+      <h2 class="extrude">Our Work Speaks First</h2>
       <p class="sec-sub">Real jobs from our crews around the Coastal Bend.</p>
     </div>
     <div class="work-grid">
-      <figure class="tile wide rv"><img src="assets/fence.jpg" alt="New cedar privacy fence" loading="lazy"><figcaption>Privacy Fence · New Build</figcaption></figure>
-      <figure class="tile tall rv rv-d1"><img src="assets/pavilion.jpg" alt="Backyard pavilion with shingle roof" loading="lazy"><figcaption>Backyard Pavilion</figcaption></figure>
-      <figure class="tile rv rv-d2"><img src="assets/shed-finished.jpg" alt="Finished custom shed" loading="lazy"><figcaption>Custom Shed</figcaption></figure>
-      <figure class="tile rv"><img src="assets/bathroom.jpg" alt="Bathroom remodel" loading="lazy"><figcaption>Bath Remodel</figcaption></figure>
-      <figure class="tile tall rv rv-d1"><img src="assets/porch-red.jpg" alt="Finished porch gable and exterior paint" loading="lazy"><figcaption>Porch &amp; Exterior Paint</figcaption></figure>
-      <figure class="tile rv rv-d2"><img src="assets/shed-wood.jpg" alt="Custom wood shed build" loading="lazy"><figcaption>Shed Build</figcaption></figure>
-      <figure class="tile rv"><img src="assets/pergola.jpg" alt="Pergola construction" loading="lazy"><figcaption>Pergola Build</figcaption></figure>
-      <figure class="tile wide rv rv-d1"><img src="assets/hero-framing.jpg" alt="Structure framing in progress" loading="lazy"><figcaption>Framing · In Progress</figcaption></figure>
+      <figure class="tile tall rv"><img src="assets/frame-truck-bay.jpg" alt="Lonestar truck at a framed bayfront build" loading="lazy"><figcaption>Bayfront Build</figcaption></figure>
+      <figure class="tile wide rv rv-d1"><img src="assets/wall-framing-crew.jpg" alt="Crew framing walls on a new build" loading="lazy"><figcaption>Wall Framing</figcaption></figure>
+      <figure class="tile rv rv-d2"><img src="assets/deck-framing.jpg" alt="Deck framing in progress" loading="lazy"><figcaption>Deck Build</figcaption></figure>
+      <figure class="tile rv"><img src="assets/fence.jpg" alt="New cedar privacy fence" loading="lazy"><figcaption>Privacy Fence</figcaption></figure>
+      <figure class="tile tall rv rv-d1"><img src="assets/pergola-build.jpg" alt="Custom pergola build" loading="lazy"><figcaption>Custom Pergola</figcaption></figure>
+      <figure class="tile rv rv-d2"><img src="assets/flooring-hallway.jpg" alt="New vinyl plank flooring" loading="lazy" style="object-position:center 75%"><figcaption>Flooring Install</figcaption></figure>
+      <figure class="tile rv"><img src="assets/gravel-driveway.jpg" alt="New gravel driveway" loading="lazy"><figcaption>Gravel Driveway</figcaption></figure>
+      <figure class="tile rv rv-d1"><img src="assets/drywall-lift.jpg" alt="Drywall being installed on a ceiling" loading="lazy"><figcaption>Drywall &amp; Texture</figcaption></figure>
+      <figure class="tile rv rv-d2"><img src="assets/pavilion.jpg" alt="Backyard pavilion with shingle roof" loading="lazy"><figcaption>Backyard Pavilion</figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="haul" id="haul">
-  <div class="wrap haul-flex">
-    <div class="haul-copy rv">
-      <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Second Division</span>
-      <h2 style="color:#fff">Hot Shot &amp;<br>Heavy Haul</h2>
-      <p>When the oilfield needs it moved, we move it. Class A CDL drivers running flatbed, gooseneck, lowboy and winch truck loads across South Texas, West Texas and the Houston area.</p>
-      <div class="haul-list">
-        <div class="bp"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><div><b>Flatbed &amp; Gooseneck</b><span>Hot shot loads, on schedule.</span></div></div>
-        <div class="bp"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><path d="M6.5 8a2 2 0 0 0-1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z"/></svg><div><b>Lowboy &amp; Winch Truck</b><span>Heavy equipment and oversize moves.</span></div></div>
-        <div class="bp"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg><div><b>South TX · West TX · Houston</b><span>Consistent oilfield routes, wherever the job is.</span></div></div>
-      </div>
-      <a class="btn btn-amber" href="tel:+13617421170">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
-        Dispatch a Load
-      </a>
-    </div>
-    <div class="haul-media rv rv-d1">
-      <img src="assets/truck-lowboy.jpg" alt="Peterbilt winch truck with lowboy trailer hauling a dozer" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<section class="light area" id="area">
+<section class="area" id="area">
   <div class="wrap">
     <div class="area-flex">
       <div class="area-copy rv">
         <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Service Area</span>
-        <h2>Proudly Coastal Bend</h2>
+        <h2 class="extrude">Proudly Coastal Bend</h2>
         <p class="sec-sub">Based in Driscoll, working every day across Corpus Christi, Kingsville and the surrounding communities. If you're close, we'll come take a look — the estimate is free.</p>
         <div class="towns">
           <span class="town"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Corpus Christi</span>
@@ -379,22 +698,22 @@
   <div class="wrap contact-flex">
     <div class="contact-copy rv">
       <span class="kicker"><svg class="tx-star"><use href="#txstar"/></svg>Free Estimate</span>
-      <h2 style="color:#fff">Let's Walk Your Job</h2>
-      <p>Tell us what you're planning — a remodel, a fence, a shed, a roof — and we'll get you a straight answer and a free estimate.</p>
+      <h2 class="extrude">Let's Walk Your Job</h2>
+      <p>Tell us what you're planning — a remodel, a fence, a deck, a roof, a build-out — and we'll get you a straight answer and a free estimate.</p>
       <a class="big-num" href="tel:+13617421170">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
         (361) 742-1170
       </a>
       <p style="font-size:.9rem">Call or text — se habla español.</p>
       <div class="contact-actions">
-        <a class="btn btn-amber" href="tel:+13617421170">Call Now</a>
+        <a class="btn btn-gold" href="tel:+13617421170">Call Now</a>
         <a class="btn btn-ghost" href="sms:+13617421170">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>
           Text Us a Photo
         </a>
       </div>
     </div>
-    <form class="quote-card rv rv-d1" onsubmit="event.preventDefault();this.querySelector('.quote-btn').textContent='Request Sent ✓';alert('This is a demo preview — the form isn\'t hooked up yet.\n\nWant this site live for your business? Call or text Jeffrey at Zonkel Media: (361) 658-2912');">
+    <form class="quote-card rv rv-d1" onsubmit="event.preventDefault();this.querySelector('.quote-btn').textContent='Request Sent ✓';alert('Preview build \u2014 this form is not connected yet.\n\nBefore launch every request will go straight to your email and phone. Nothing sent right now is lost, but nothing is delivered either.');">
       <h3>Request Your Free Estimate</h3>
       <p class="qc-sub">Takes 30 seconds. We'll call you back to set a time.</p>
       <div class="field-row">
@@ -404,37 +723,93 @@
       <div class="field">
         <label for="qs">What do you need?</label>
         <select id="qs">
-          <option>Remodeling</option>
-          <option>Drywall &amp; Texturing</option>
+          <option>New Construction / Framing</option>
+          <option>Remodeling / Flooring</option>
           <option>Roofing</option>
+          <option>Deck / Pergola / Shed</option>
           <option>Fencing</option>
-          <option>Shed / Outdoor Structure</option>
-          <option>Landscaping / Exterior</option>
-          <option>Hot Shot / Heavy Haul</option>
+          <option>Drywall &amp; Texturing</option>
+          <option>Commercial Project</option>
           <option>Something Else</option>
         </select>
       </div>
       <div class="field"><label for="qm">Tell us about the job</label><textarea id="qm" placeholder="Example: privacy fence, about 120 ft, backyard on a corner lot…"></textarea></div>
-      <button class="btn btn-amber quote-btn" type="submit">Request Free Estimate</button>
-      <p class="qc-note">Prefer to talk? Call <a href="tel:+13617421170" style="color:var(--amber-deep);font-weight:700">(361) 742-1170</a></p>
+      <button class="btn btn-gold quote-btn" type="submit">Request Free Estimate</button>
+      <p class="qc-note">Prefer to talk? Call <a href="tel:+13617421170" style="color:var(--green-deep);font-weight:800">(361) 742-1170</a></p>
     </form>
   </div>
 </section>
 
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Project photo">
+  <button class="lb-btn lb-close" type="button" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <button class="lb-btn lb-prev" type="button" id="lbPrev" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+  <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+  <figure class="lb-fig">
+    <img id="lbImg" src="" alt="">
+    <figcaption class="lb-cap" id="lbCap"></figcaption>
+  </figure>
+  <span class="lb-count" id="lbCount"></span>
+</div>
+
 <footer>
-  <div class="wrap foot">
-    <img src="assets/logo.jpg" alt="">
-    <span class="fname">Lonestar Pro Solutions</span>
-    <span class="sep">|</span>
-    <a href="tel:+13617421170">(361) 742-1170</a>
-    <span class="sep">|</span>
-    <span>Driscoll, TX · Serving the Coastal Bend</span>
-    <span class="sep">|</span>
-    <a href="https://www.facebook.com/profile.php?id=61578606846074" target="_blank" rel="noopener">Facebook</a>
+  <div class="wrap">
+    <div class="foot-grid">
+
+      <div class="foot-brand">
+        <img src="assets/logo.png" alt="Lonestar Pro Solutions">
+        <p>Family-run residential &amp; commercial construction based in Driscoll, Texas &mdash; serving Corpus Christi, Kingsville and the surrounding Coastal Bend.</p>
+        <a class="foot-social" href="https://www.facebook.com/profile.php?id=61578606846074" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.5-3.9 3.77-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12"/></svg>
+          Follow on Facebook
+        </a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">New Construction &amp; Framing</a></li>
+          <li><a href="#services">Remodeling &amp; Flooring</a></li>
+          <li><a href="#services">Roofing</a></li>
+          <li><a href="#services">Decks, Pergolas &amp; Sheds</a></li>
+          <li><a href="#services">Fencing</a></li>
+          <li><a href="#services">Drywall &amp; Texturing</a></li>
+          <li><a href="#services">Gravel Driveways</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">What We Do</a></li>
+          <li><a href="#commercial">Commercial Division</a></li>
+          <li><a href="#feature">Featured Project</a></li>
+          <li><a href="#work">Recent Work</a></li>
+          <li><a href="#area">Service Area</a></li>
+          <li><a href="#contact">Free Estimate</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col foot-contact">
+        <h4>Get In Touch</h4>
+        <a class="foot-phone" href="tel:+13617421170">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+          (361) 742-1170
+        </a><br>
+        <a class="foot-link" href="sms:+13617421170">Text us a job photo</a>
+        <p>Free estimates on every job.<br>Se habla espa&ntilde;ol.</p>
+        <p>Driscoll, TX</p>
+      </div>
+
+    </div>
+
+    <div class="foot-bottom">
+      <span>&copy; 2026 Lonestar Pro Solutions. All rights reserved.</span>
+      <span>Site by <a href="https://zonkelmedia.com" target="_blank" rel="noopener">Zonkel Media</a></span>
+    </div>
   </div>
 </footer>
 
-<div class="mob-bar">
+<div class="mob-bar" id="mobBar">
   <a class="mob-call" href="tel:+13617421170">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
     Call Now
@@ -452,6 +827,70 @@
   document.querySelectorAll('.rv:not(.in)').forEach(el => io.observe(el));
   // fail-safe: never leave a section invisible
   setTimeout(() => document.querySelectorAll('.rv:not(.in)').forEach(el => el.classList.add('in')), 5000);
+
+  // sticky call bar appears after scrolling past the hero
+  const mobBar = document.getElementById('mobBar');
+  new IntersectionObserver(([e]) => {
+    mobBar.classList.toggle('show', !e.isIntersecting);
+  }, { threshold: 0 }).observe(document.querySelector('.hero'));
+
+  // mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const setNav = open => {
+    document.body.classList.toggle('nav-open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  navToggle.addEventListener('click', () => setNav(!document.body.classList.contains('nav-open')));
+  document.querySelectorAll('#mobileNav a').forEach(a => a.addEventListener('click', () => setNav(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !document.body.classList.contains('lb-open')) setNav(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 960) setNav(false); });
+
+  // gallery lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  const lbCount = document.getElementById('lbCount');
+  const shots = [...document.querySelectorAll('.work-grid .tile')].map(f => ({
+    src: f.querySelector('img').src,
+    alt: f.querySelector('img').alt,
+    cap: (f.querySelector('figcaption') || {}).textContent || ''
+  }));
+  let lbAt = 0;
+  const lbShow = i => {
+    lbAt = (i + shots.length) % shots.length;
+    const shot = shots[lbAt];
+    lbImg.src = shot.src;
+    lbImg.alt = shot.alt;
+    lbCap.textContent = shot.cap;
+    lbCount.textContent = (lbAt + 1) + ' / ' + shots.length;
+  };
+  const lbOpen = i => { lbShow(i); document.body.classList.add('lb-open'); document.body.style.overflow = 'hidden'; document.getElementById('lbClose').focus(); };
+  const lbClose = () => { document.body.classList.remove('lb-open'); document.body.style.overflow = ''; };
+  document.querySelectorAll('.work-grid .tile').forEach((f, i) => {
+    f.tabIndex = 0;
+    f.setAttribute('role', 'button');
+    f.setAttribute('aria-label', 'View photo: ' + ((f.querySelector('figcaption') || {}).textContent || ''));
+    f.addEventListener('click', () => lbOpen(i));
+    f.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); lbOpen(i); } });
+  });
+  document.getElementById('lbClose').addEventListener('click', lbClose);
+  document.getElementById('lbPrev').addEventListener('click', () => lbShow(lbAt - 1));
+  document.getElementById('lbNext').addEventListener('click', () => lbShow(lbAt + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) lbClose(); });
+  document.addEventListener('keydown', e => {
+    if (!document.body.classList.contains('lb-open')) return;
+    if (e.key === 'Escape') lbClose();
+    if (e.key === 'ArrowLeft') lbShow(lbAt - 1);
+    if (e.key === 'ArrowRight') lbShow(lbAt + 1);
+  });
+
+  // commercial walkthrough video plays only while on screen
+  const vid = document.querySelector('.com-video video');
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { vid.play().catch(() => {}); } else { vid.pause(); }
+  }, { threshold: 0.35 }).observe(vid);
 </script>
 
 </body>
