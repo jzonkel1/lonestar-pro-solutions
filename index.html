@@ -538,7 +538,11 @@
     .about-copy{text-align:center}
     /* two-up instead of a four-high stack, same as the featured-project pills */
     .about-chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:430px;margin-inline:auto}
-    .about-chips .chip{justify-content:center;text-align:center;font-size:.78rem;padding:10px 8px;line-height:1.25}
+    /* the icon used to sit in the flow, which pushed a wrapped label off-centre;
+       taking it out of the flow lets the text centre on the pill itself */
+    .about-chips .chip{position:relative;justify-content:center;text-align:center;
+      font-size:.78rem;padding:10px 34px;line-height:1.25}
+    .about-chips .chip svg{position:absolute;left:12px;top:50%;transform:translateY(-50%)}
     /* full-bleed so it actually reads big on a phone, dissolving out of the
        sand at the top (that part of the frame is just overcast sky) and
        running flush into the next section at the bottom */
@@ -880,7 +884,7 @@
         <a class="btn btn-ghost" href="#contact">Get a Free Estimate</a>
       </div>
       <div class="proof-row rv in rv-d3">
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>60-Day Workmanship Guarantee</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>100% Workmanship Guarantee</span>
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Free Estimates</span>
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Residential &amp; Commercial</span>
       </div>
