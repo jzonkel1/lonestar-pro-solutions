@@ -409,7 +409,11 @@
     font-size:.86rem;font-weight:700;color:var(--green-deep)}
   .hours-line svg{width:17px;height:17px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:2;
     stroke-linecap:round;stroke-linejoin:round}
-  @media(max-width:700px){.hours-line{font-size:.82rem;padding:8px 14px}}
+  /* keep it on one line at 390px rather than wrapping 'appointment' down */
+  @media(max-width:700px){
+    .hours-line{white-space:nowrap;font-size:clamp(.6rem,3.02vw,.8rem);padding:7px 12px;gap:7px}
+    .hours-line svg{width:15px;height:15px}
+  }
 
   /* ---------- FAQ ---------- */
   .faq{padding:96px 0 100px;background:var(--sand)}
