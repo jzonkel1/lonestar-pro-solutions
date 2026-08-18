@@ -1,0 +1,25 @@
+# Lonestar Pro Solutions
+
+> Residential and commercial construction company based in Robstown, Texas, serving Corpus Christi,
+> Kingsville, Robstown, Portland and the surrounding Coastal Bend since 2011.
+
+- Phone: (361) 742-1170 (call or text)
+- Hours: Monday-Friday 7:00 AM - 6:00 PM; Saturday by appointment; Sunday closed
+- Service area: Corpus Christi, Kingsville, Robstown, Portland and surrounding Coastal Bend, Texas
+- Certified contractor with the cities of Corpus Christi, Kingsville, Robstown and Portland
+- Guarantee: 100% workmanship guarantee covering their own workmanship for 60 days after completion
+- Estimates: free on every job
+- Financing: available through several lenders
+- Languages: English and Spanish (se habla espanol)
+- Crew: five in-house employees; work is not subcontracted out
+
+## Services
+Framing and new construction, remodeling and flooring, roofing, siding, decks, pergolas and sheds,
+fencing, drywall and texturing, concrete and driveways, interior and exterior painting, and
+ground-up commercial build-outs including facades, waterproofing and storefront finish-outs.
+
+## Pages
+- [Home](https://jzonkel1.github.io/lonestar-pro-solutions/): services, recent work, featured commercial project, service area, free estimate form
+- [Privacy Policy](https://jzonkel1.github.io/lonestar-pro-solutions/privacy.html)
+- [Terms of Service](https://jzonkel1.github.io/lonestar-pro-solutions/terms.html): includes the written workmanship guarantee
+- [Accessibility](https://jzonkel1.github.io/lonestar-pro-solutions/accessibility.html)
