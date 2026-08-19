@@ -592,8 +592,9 @@
   .band-watermark{position:absolute;right:-64px;top:50%;transform:translateY(-50%);width:330px;height:330px;fill:rgba(255,255,255,.075);pointer-events:none}
   .band-flex{display:flex;align-items:center;gap:44px;flex-wrap:wrap}
   .band-quote{flex:1 1 400px;display:flex;gap:22px;align-items:flex-start;position:relative}
-  .band-quote .star-3d{width:78px;height:auto;flex-shrink:0;margin:-2px 0 0;
-    filter:drop-shadow(0 8px 16px rgba(0,0,0,.35))}
+  /* no CSS drop-shadow here: before the PNG decodes the filter renders against
+     the element box and flashes a shadowed square. The art carries its own shadow. */
+  .band-quote .star-3d{width:78px;height:auto;flex-shrink:0;margin:-2px 0 0}
   .band-quote p{font-family:var(--display);font-weight:800;font-style:italic;font-size:clamp(1.45rem,2.5vw,2.1rem);line-height:1.14;color:var(--band-head);text-transform:uppercase;letter-spacing:-.005em}
   .band-points{flex:1 1 340px;display:grid;gap:14px}
   .band .bp svg{stroke:var(--band-star)}
