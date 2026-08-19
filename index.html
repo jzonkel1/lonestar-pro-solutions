@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Construction in Corpus Christi &amp; Kingsville, TX | Lonestar Pro Solutions</title>
-<meta name="description" content="Residential & commercial construction in the Coastal Bend since 2011, backed by a 100% workmanship guarantee for 60 days. Framing, remodeling, roofing, decks, fencing and drywall. Serving Corpus Christi, Kingsville & the Coastal Bend. Call (361) 742-1170.">
-<link rel="canonical" href="https://jzonkel1.github.io/lonestar-pro-solutions/">
+<title>Construction in Robstown &amp; Corpus Christi, TX | Lonestar Pro Solutions</title>
+<meta name="description" content="Residential & commercial construction in the Coastal Bend since 2011, backed by a 100% workmanship guarantee for 60 days. Framing, remodeling, roofing, decks, fencing and drywall. Serving Robstown, Corpus Christi, Kingsville & the Coastal Bend. Call (361) 742-1170.">
+<link rel="canonical" href="https://lonestarprosolutionstx.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#12301a">
 <meta name="geo.region" content="US-TX">
@@ -14,18 +14,18 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lonestar Pro Solutions">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://jzonkel1.github.io/lonestar-pro-solutions/">
-<meta property="og:title" content="Lonestar Pro Solutions — Residential &amp; Commercial Construction | Corpus Christi &amp; Kingsville, TX">
-<meta property="og:description" content="Residential &amp; commercial construction in the Coastal Bend since 2011, backed by a 100% workmanship guarantee for 60 days. Framing, remodeling, roofing, decks, fencing and drywall. Serving Corpus Christi, Kingsville &amp; the Coastal Bend. Call (361) 742-1170.">
-<meta property="og:image" content="https://jzonkel1.github.io/lonestar-pro-solutions/assets/og-image.jpg">
+<meta property="og:url" content="https://lonestarprosolutionstx.com/">
+<meta property="og:title" content="Construction in Robstown &amp; Corpus Christi, TX | Lonestar Pro Solutions">
+<meta property="og:description" content="Residential &amp; commercial construction in the Coastal Bend since 2011, backed by a 100% workmanship guarantee for 60 days. Framing, remodeling, roofing, decks, fencing and drywall. Serving Robstown, Corpus Christi, Kingsville &amp; the Coastal Bend. Call (361) 742-1170.">
+<meta property="og:image" content="https://lonestarprosolutionstx.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Lonestar Pro Solutions crew framing a roof in the Coastal Bend">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lonestar Pro Solutions — Residential &amp; Commercial Construction | Corpus Christi &amp; Kingsville, TX">
-<meta name="twitter:description" content="Residential &amp; commercial construction in the Coastal Bend since 2011, backed by a 100% workmanship guarantee for 60 days. Framing, remodeling, roofing, decks, fencing and drywall. Serving Corpus Christi, Kingsville &amp; the Coastal Bend. Call (361) 742-1170.">
-<meta name="twitter:image" content="https://jzonkel1.github.io/lonestar-pro-solutions/assets/og-image.jpg">
+<meta name="twitter:title" content="Construction in Robstown &amp; Corpus Christi, TX | Lonestar Pro Solutions">
+<meta name="twitter:description" content="Residential &amp; commercial construction in the Coastal Bend since 2011, backed by a 100% workmanship guarantee for 60 days. Framing, remodeling, roofing, decks, fencing and drywall. Serving Robstown, Corpus Christi, Kingsville &amp; the Coastal Bend. Call (361) 742-1170.">
+<meta name="twitter:image" content="https://lonestarprosolutionstx.com/assets/og-image.jpg">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
@@ -42,9 +42,9 @@
   "@context": "https://schema.org",
   "@type": "GeneralContractor",
   "name": "Lonestar Pro Solutions",
-  "url": "https://jzonkel1.github.io/lonestar-pro-solutions/",
-  "image": "https://jzonkel1.github.io/lonestar-pro-solutions/assets/hteao-finished.jpg",
-  "logo": "https://jzonkel1.github.io/lonestar-pro-solutions/assets/logo-square.png",
+  "url": "https://lonestarprosolutionstx.com/",
+  "image": "https://lonestarprosolutionstx.com/assets/hteao-finished.jpg",
+  "logo": "https://lonestarprosolutionstx.com/assets/logo-square.png",
   "telephone": "+1-361-742-1170",
   "foundingDate": "2011",
   "knowsLanguage": ["en", "es"],
@@ -413,6 +413,9 @@
     .hours-line{white-space:nowrap;font-size:clamp(.6rem,3.02vw,.8rem);padding:7px 12px;gap:7px}
     .hours-line svg{width:15px;height:15px}
   }
+
+  .form-sent{margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(var(--acc-rgb),.1);
+    border:1px solid rgba(var(--acc-rgb),.3);color:var(--green-deep);font-weight:700;font-size:.9rem;line-height:1.5}
 
   /* ---------- FAQ ---------- */
   .faq{padding:96px 0 100px;background:var(--sand)}
@@ -1394,16 +1397,18 @@
         </a>
       </div>
     </div>
-    <form class="quote-card rv rv-d1" onsubmit="event.preventDefault();this.querySelector('.quote-btn').textContent='Request Sent ✓';alert('Preview build \u2014 this form is not connected yet.\n\nBefore launch every request will go straight to your email and phone. Nothing sent right now is lost, but nothing is delivered either.');">
+    <form class="quote-card rv rv-d1" id="quoteForm" name="estimate-detailed" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="estimate-detailed">
+      <p class="wiz-hp"><label>Leave this empty <input name="bot-field"></label></p>
       <h3>Request Your Free Estimate</h3>
       <p class="qc-sub">Takes 30 seconds. We'll call you back to set a time.</p>
       <div class="field-row">
-        <div class="field"><label for="qn">Name</label><input id="qn" type="text" placeholder="Your name"></div>
-        <div class="field"><label for="qp">Phone</label><input id="qp" type="tel" placeholder="(361) 555-0123"></div>
+        <div class="field"><label for="qn">Name</label><input id="qn" name="name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="qp">Phone</label><input id="qp" name="phone" type="tel" placeholder="(361) 555-0123" required></div>
       </div>
       <div class="field">
         <label for="qs">What do you need?</label>
-        <select id="qs">
+        <select id="qs" name="service">
           <option>New Construction / Framing</option>
           <option>Remodeling / Flooring</option>
           <option>Roofing</option>
@@ -1414,7 +1419,7 @@
           <option>Something Else</option>
         </select>
       </div>
-      <div class="field"><label for="qm">Tell us about the job</label><textarea id="qm" placeholder="Example: privacy fence, about 120 ft, backyard on a corner lot…"></textarea></div>
+      <div class="field"><label for="qm">Tell us about the job</label><textarea id="qm" name="details" placeholder="Example: privacy fence, about 120 ft, backyard on a corner lot…"></textarea></div>
       <button class="btn btn-gold quote-btn" type="submit">Request Free Estimate</button>
       <p class="qc-note">Prefer to talk? Call <a href="tel:+13617421170" style="color:var(--green-deep);font-weight:800">(361) 742-1170</a></p>
     </form>
@@ -1634,14 +1639,6 @@
     go(w.classList.contains('s3') ? 2 : 1);
   });
 
-  // Netlify Forms handles this once the site moves off GitHub Pages.
-  w.addEventListener('submit', function(e){
-    if (location.hostname.indexOf('github.io') > -1 || location.protocol === 'file:') {
-      e.preventDefault();
-      w.querySelector('button[type=submit]').textContent = 'Request Sent \u2713';
-      alert('Preview build \u2014 this form is not connected yet.\n\nBefore launch every request will go straight to your email and phone. Nothing sent right now is lost, but nothing is delivered either.');
-    }
-  });
 })();
 </script>
 
@@ -1861,6 +1858,53 @@
     window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(layout, 150); });
     layout();
   });
+})();
+</script>
+
+<script>
+/* Both forms post to Netlify over fetch so the visitor stays on the page.
+   On github.io / file:// there is no Netlify backend, so they fall back to the
+   preview notice instead of failing silently. */
+(function(){
+  var PREVIEW = location.hostname.indexOf('github.io') > -1 || location.protocol === 'file:';
+
+  function done(form, btn, label){
+    btn.textContent = label;
+    btn.disabled = true;
+    var note = document.createElement('p');
+    note.className = 'form-sent';
+    note.textContent = "Got it \u2014 we'll call you back to set a time. Need it sooner? Call (361) 742-1170.";
+    form.appendChild(note);
+  }
+
+  function wire(form, btnSel, sentLabel){
+    if (!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = form.querySelector(btnSel);
+      if (!btn || btn.disabled) return;
+      if (PREVIEW) {
+        alert('Preview build \u2014 this form is not connected on the preview link.\n\nOn the live site every request goes straight to your email.');
+        done(form, btn, sentLabel);
+        return;
+      }
+      btn.textContent = 'Sending\u2026';
+      fetch('/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function(r){
+        if (!r.ok) throw new Error(r.status);
+        done(form, btn, sentLabel);
+      }).catch(function(){
+        btn.textContent = 'Try again';
+        alert("That didn't go through. Please call or text (361) 742-1170 and we'll get you on the schedule.");
+      });
+    });
+  }
+
+  wire(document.getElementById('quoteForm'), '.quote-btn', 'Request Sent \u2713');
+  wire(document.getElementById('wiz'), 'button[type=submit]', 'Request Sent \u2713');
 })();
 </script>
 </body>
